@@ -45,7 +45,7 @@ body{
 }
 #dna-icon{
    width: clamp(80px, 4.5vw, 120px);
-  height:20px;
+  height:100px;
   
   margin: clamp(18px, 3vh, 34px) auto;
   
@@ -56,5 +56,6 @@ body{
     font-size: 20px;
     background-color :#b9a68d  ;
     border-radius: 10px;
+    border: 0;
 
 }
