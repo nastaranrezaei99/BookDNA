@@ -43,3 +43,10 @@ body{
     margin-top: 12px;
     
 }
+#dna-icon{
+  width: clamp(34px, 4.5vw, 56px);
+  height: auto;
+  display: block;
+  margin: clamp(10px, 2vh, 18px) auto;
+  opacity: 0.75;
+}
