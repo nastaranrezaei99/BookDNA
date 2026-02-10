@@ -48,7 +48,7 @@ body{
   height: auto;
   
   margin: clamp(14px, 2vh, 22px) auto;
-  opacity: -0.75;
+  
 }
 
 #first-Button{
