@@ -1,7 +1,7 @@
 .Back{
     background-image:url("./bookdnaBack.png");
     background-size: cover;
-    background-position: center;
+    background-position: 50% 80%;
     background-repeat: no-repeat;
     min-height: 100vh;
 
