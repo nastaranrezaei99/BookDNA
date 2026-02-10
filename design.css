@@ -1,10 +1,11 @@
+* { box-sizing: border-box; }
 html,body{
     height: 100%;
     margin : 0;
 }
 
 .Back{
-    min-height: 900vh;
+    min-height: 100vh;
     width: min(900px, 100%); 
     background-image:url("./bookdnaBack.png");
     background-size:cover;
