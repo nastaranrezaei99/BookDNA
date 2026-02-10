@@ -1,3 +1,11 @@
+@font-face{
+  font-family: "Lavishly Yours";
+  src: url("font/LavishlyYours-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 * { box-sizing: border-box; }
 html,body{
     height: 100%;
@@ -20,7 +28,7 @@ body{
 }
 
 #titel {
-    font-family: 'Birds of Paradise';
+    font-family: 'Lavishly Yours';
     text-align: center;
     color: #a0785a  ;
     font-size: 50px;
