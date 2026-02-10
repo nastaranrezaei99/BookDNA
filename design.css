@@ -6,7 +6,7 @@ html,body{
 
 .Back{
     min-height: 100vh;
-    width: min(900px, 100%); 
+    width: min(1100px, 100%); 
     background-image:url("./bookdnaBack.png");
     background-size:cover;
     background-repeat: no-repeat;
