@@ -28,8 +28,10 @@ body{
 
 }
 .Back{
-    text-align: center;
-    width: min(1100px, 92vw);
+  width: min(1400px, 96vw);
+  margin: 0 auto;
+  text-align: center;
+  padding-top: clamp(40px, 8vh, 120px);
 }
 
 #titel {
@@ -69,7 +71,7 @@ body{
 #dna-icon{
   width: clamp(80px, 6vw, 120px) !important;
   height: auto !important;
-  display: block;
+  
   margin: 24px auto;
-  opacity: 0.75;
+  
 }
