@@ -14,9 +14,8 @@ body{
     background-position: center;
    
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 70px;
+    
+    padding-top: 80px;
 
 }
 
