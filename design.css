@@ -20,10 +20,11 @@ body{
 }
 
 #titel {
-    font-family: 'Brush Script';
+    font-family: 'Birds of Paradise';
     text-align: center;
     color: #a0785a  ;
     font-size: 50px;
     font-weight: 700;
     margin-top: 12px;
+    margin-left: 30px;
 }
