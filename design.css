@@ -62,5 +62,16 @@ body{
     background-color :#b9a68d  ;
     border-radius: 10px;
     border: 0;
+    margin-right: 12px;
+
+}
+#seccond-Button{
+
+    color: white;
+    font-size: 20px;
+    background-color :#756d63  ;
+    border-radius: 5px;
+    border: 1px;
+
 
 }
