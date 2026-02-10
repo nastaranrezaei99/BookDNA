@@ -7,5 +7,7 @@ body{
     font-family: 'rush Script';
     text-align: center;
     color: #002147 ;
-    
+    font-size: medium;
+    font-weight: 700;
+    margin-top: 12px;
 }
