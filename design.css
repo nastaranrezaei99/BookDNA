@@ -50,7 +50,9 @@ body{
 
 #first-Button{
     color: white;
-    font-size: 30px;
+    width: 30px;
+    height: 10;
+    font-size: 20px;
     background-color :#b9a68d  ;
     border-radius: 5px;
     border: 0;
@@ -60,7 +62,9 @@ body{
 #seccond-Button{
 
     color: white;
-    font-size: 30px;
+    width: 30px;
+    height: 10;
+    font-size: 20px;
     background-color :#756d63  ;
     border-radius: 5px;
     border: 0;
