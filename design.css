@@ -43,6 +43,11 @@ body{
     margin-top: 12px;
     
 }
+#titel2{
+    color: #907467
+}
+
+
 #dna-icon{
    width: clamp(80px, 4.5vw, 120px);
   height:100px;
