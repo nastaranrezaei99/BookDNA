@@ -44,9 +44,14 @@ body{
     
 }
 #dna-icon{
-  width: clamp(34px, 4.5vw, 56px);
+   width: clamp(44px, 4vw, 72px);
   height: auto;
-  display: block;
-  margin: clamp(10px, 2vh, 18px) auto;
-  opacity: 0.75;
+  
+  margin: clamp(14px, 2vh, 22px) auto;
+  opacity: -0.75;
+}
+
+#first-Button{
+    font-size: 20px;
+
 }
