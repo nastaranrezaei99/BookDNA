@@ -44,15 +44,15 @@ body{
     
 }
 #dna-icon{
-   width: clamp(44px, 4vw, 72px);
+   width: clamp(52px, 4.5vw, 90px);
   height: auto;
-  
-  margin: clamp(14px, 2vh, 22px) auto;
+  display: block;
+  margin: clamp(18px, 3vh, 34px) auto;
   
 }
 
 #first-Button{
     font-size: 20px;
-    background-color :#6f4e37 ;
+    background-color :#987654 ;
 
 }
