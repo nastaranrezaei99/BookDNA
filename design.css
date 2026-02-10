@@ -10,7 +10,7 @@ body{
     background-image:url("./bookdnaBack.png");
     background-size:cover;
     background-repeat: no-repeat;
-    background-position-y: top;
+    background-position-y:bottom;
     
    
     display: flex;
