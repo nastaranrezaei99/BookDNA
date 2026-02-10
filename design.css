@@ -1,9 +1,14 @@
-body{
-     width: min(900px, 100%); 
+html,body{
+    height: 100%;
+    margin : 0;
+}
+
+.Back{
+    width: min(900px, 100%); 
     background-image:url("./bookdnaBack.png");
     background-size:100% ;
     background-repeat: no-repeat;
-    
+    aspect-ratio: 16/9;
     background-position: 50% 50%;
     
 
