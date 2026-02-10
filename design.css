@@ -50,8 +50,8 @@ body{
 
 #first-Button{
     color: white;
-    width: 30px;
-    height: 10;
+    width: 5px;
+    height: 30px;
     font-size: 20px;
     background-color :#b9a68d  ;
     border-radius: 5px;
@@ -63,7 +63,7 @@ body{
 
     color: white;
     width: 30px;
-    height: 10;
+    height: 10px;
     font-size: 20px;
     background-color :#756d63  ;
     border-radius: 5px;
