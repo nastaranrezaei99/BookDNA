@@ -66,6 +66,7 @@ body{
     border-radius: 5px;
     border: 0;
     margin-right: 25px;
+    text-align: center;
 
 }
 #seccond-Button{
@@ -75,6 +76,7 @@ body{
     height: 40px;
     display: inline-flex;
     font-size: 20px;
+    
     background-color :#756d63  ;
     border-radius: 5px;
     border: 0;
