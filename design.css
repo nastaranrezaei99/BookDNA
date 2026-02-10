@@ -1,4 +1,5 @@
 body{
+     width: min(900px, 100%); 
     background-image:url("./bookdnaBack.png");
     background-size:100% ;
     background-repeat: no-repeat;
