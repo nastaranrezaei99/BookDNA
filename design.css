@@ -49,6 +49,10 @@ body{
 .btns{
 
      flex-wrap: wrap; 
+     display: flex;
+     justify-content: center;
+     gap: 14px; 
+     margin-top: 20px;
 
 }
 
