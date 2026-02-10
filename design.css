@@ -22,19 +22,19 @@ body{
     
    
     display: flex;
-    
+    align-items: center;
     
 
 }
 .Back{
     text-align: center;
-    padding-left: 10cm;
+    
 
 
 }
 
 #titel {
-    font-family: 'Lavishly Yours';
+    font-family: 'uni-monospace';
     
     color: #a0785a  ;
     font-size: 60px;
