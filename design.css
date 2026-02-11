@@ -87,9 +87,10 @@ body{
 
 .step1{
 
-    width: min(700px,92vw);
+    width: min(650px,92vw);
+    height: min(650px,92vw);
     background-color: rgba(117, 109, 99, 0.35);
     backdrop-filter: blur 8px;
-    -webkit-backdrop-filter: blur(8px);
+    
 
 }
