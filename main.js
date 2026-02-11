@@ -25,5 +25,6 @@ btn2.addEventListener("click" , () => {
 back1.addEventListener("click" , () => {
     landing3.style.display = "none";
     moodForm.style.display = "block";
+    landing2.style.display = "block"; 
 
 })
