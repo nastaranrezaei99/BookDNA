@@ -5,7 +5,8 @@ const  form2 = document.getElementById("secque");
 const moodForm = document.getElementById("firstque");   
 const btnMood  = document.getElementById("second-Button"); 
 const btn2 = document.getElementById ("button1");
-
+const back1 = document.getElementById("button22")
+const landing3 = document.getElementById("step2")
 
 btnMood.addEventListener("click", () => {
   
@@ -20,3 +21,9 @@ btn2.addEventListener("click" , () => {
 
     form2.style.display = "block";
 });
+
+back1.addEventListener("click" , () => {
+    landing3.style.display = "none";
+    moodForm.style.display = "block";
+
+})
