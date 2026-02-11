@@ -88,7 +88,7 @@ body{
 .step1{
 
     width: min(700px,92vw);
-    background-color: #523500;
+    background-color: rgba(117, 109, 99, 0.35);
     backdrop-filter: blur 8px;
 
 }
