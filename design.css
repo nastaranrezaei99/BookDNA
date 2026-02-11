@@ -71,6 +71,7 @@ body{
     background-color :#756d63  ;
     border-radius: 5px;
     border: 0;
+    padding-bottom: 20px;
 }
 
 
@@ -78,7 +79,7 @@ body{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
   bottom: 300px;
-  padding-top: 60px;   
+  padding-bottom: 60px;  
   
 }
 
