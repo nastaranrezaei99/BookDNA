@@ -49,6 +49,7 @@ body{
 
 
 #first-Button{
+    position: absolute;
     color: white;
     width: 210px;
     height: 40px;
@@ -60,7 +61,7 @@ body{
 
 }
 #second-Button{
-
+    position: absolute;
     color: white;
     width: 210px;
     height: 40px;
@@ -75,7 +76,7 @@ body{
 #dna-icon{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
-   margin: 10px auto 12px;
+  margin: 1px auto 1px; 
   
 }
 
@@ -88,7 +89,7 @@ body{
 
     width: min(650px,92vw);
     height: min(450px,92vw);
-    background-color: rgba(44, 29, 2, 0.35);
+    background-color: rgba(82, 53, 0, 0.35);
     backdrop-filter: blur 8px;
     
 
