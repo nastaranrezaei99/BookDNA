@@ -1,6 +1,6 @@
 
 const landing = document.getElementById("landing");
-const landing2 = document.getElementsById ("step1");
+const landing2 = document.getElementById ("step1");
 const  form2 = document.getElementById("secque");     
 const moodForm = document.getElementById("firstque");   
 const btnMood  = document.getElementById("second-Button"); 
