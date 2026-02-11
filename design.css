@@ -148,7 +148,7 @@ body{
     width: 500px;
     height: 400px;
     position: absolute;
-    left: 50px;
+    right: 70px;
     bottom:0px ;
 
     filter: drop-shadow(0 25px 30px rgba(0,0,0,0.6));
