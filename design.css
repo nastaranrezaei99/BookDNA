@@ -145,6 +145,8 @@ body{
 
 }
 #dosto{
+    width: 250px;
+    height: 250px;
     position: absolute;
     left: 40px;
     bottom:0px ;
@@ -152,5 +154,5 @@ body{
     filter: drop-shadow(0 25px 30px rgba(0,0,0,0.6));
     pointer-events: none;
 
-    transform: rotate(-4deg);
+    
 }
