@@ -94,7 +94,7 @@ body{
 
 .step1{
     
-    .step1{ 
+    
         margin-top: 80px; 
         width: min(650px,92vw); 
         height: min(400px,92vw); 
@@ -105,14 +105,14 @@ body{
         text-align: center; 
         align-items: center; 
         flex-direction: column; 
-    }
+    
 }
 
 
 #question1{
     text-align: center;
     padding-top: 20px;
-    color: rgb(71, 53, 15);
+    color: rgb(224, 218, 230);
     font-weight: 100;
 
 }
@@ -120,12 +120,12 @@ body{
 
 
 .step1 label{
-  color: rgb(71, 53, 15);
+  color: rgb(235, 232, 227);
   font-size: 20px;
   font-weight: 300;
-  text-align: left;
+  text-align: center;
   display: inline-block;
-  text-align: left; 
+  
   width: 220px; 
 }
 
