@@ -93,10 +93,17 @@ body{
 
 
 .step1{
-     
+    
+    
+        margin-top: 80px; 
+        width: min(650px,92vw); 
+        height: min(400px,92vw); 
+        background-color: rgba(70, 46, 19, 0.726); 
+        backdrop-filter: blur 15px; 
+        border-radius: 20px; 
         box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
-        text-align: left; 
-        align-items: left; 
+        text-align: center; 
+        align-items: center; 
         flex-direction: column; 
     
 }
@@ -128,8 +135,7 @@ body{
 
 #dosto{
 
-    width: 200px;
-    height: 200px;
-    margin-right: 50px;
+   
+    
 
 }
