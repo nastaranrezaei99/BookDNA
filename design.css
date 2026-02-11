@@ -31,6 +31,7 @@ body{
   width: min(1400px, 96vw);
   margin: 0 auto;
   text-align: center;
+  gap: 18px; 
   padding-top: clamp(40px, 8vh, 120px);
 }
 
@@ -89,8 +90,9 @@ body{
 
     width: min(650px,92vw);
     height: min(450px,92vw);
-    background-color: rgba(44, 29, 9, 0.473);
+    background-color: rgba(44, 29, 9, 0.616);
     backdrop-filter: blur 8px;
+    border-radius: 5px;
     
 
 }
