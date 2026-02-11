@@ -97,6 +97,8 @@ body{
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61);
     text-align: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 
@@ -108,9 +110,7 @@ body{
 
 }
 
-.step1{
-    align-items: center;
-}
+
 
 .step1 label{
   color: whitesmoke;
