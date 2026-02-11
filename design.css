@@ -78,7 +78,7 @@ body{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
   bottom: 300px;
-  margin-top: 20px;   
+  margin-bottom: 20px;   
   
 }
 
@@ -88,7 +88,7 @@ body{
 }
 
 .step1{
-    margin-top: 50px;
+    margin-top: 80px;
     width: min(650px,92vw);
     height: min(400px,92vw);
     background-color: rgba(70, 46, 19, 0.726);
