@@ -94,24 +94,23 @@ body{
 
 .step1{
     
-    width: min(650px, 92vw);
-  min-height: 400px;        /* به جای height ثابت */
-  padding: 28px 28px 18px;  /* فضای داخلی */
+    margin-top: 80px;
 
-  background-color: rgba(70, 46, 19, 0.72);
+  width: min(720px, 92vw);      /* کارت پهن‌تر، مثل عکس */
+  min-height: 360px;            /* ارتفاع کنترل‌شده */
+  padding: 26px 28px 22px;
+
+  background-color: rgba(70, 46, 19, 0.726);
   backdrop-filter: blur(15px);
-
   border-radius: 20px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61);
 
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
 
-  display: flex;            /* مهم */
-  flex-direction: column;   /* مهم */
-  align-items: center;      /* وسط‌چین افقی */
-  gap: 14px;                /* فاصله منظم بین بخش‌ها */
-
-  margin-top: 0;  
+  text-align: center; 
     
 }
 
@@ -141,10 +140,14 @@ body{
 }
 
 #dosto{
-width: 160px;            
+width: 150px;          /* اندازه عکس */
   height: auto;
   margin-top: 10px;
-  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.55));
+
+  display: block;
+  border-radius: 14px;   /* اگر PNG شفاف نیست، نرم میشه */
+
+  filter: drop-shadow(0 18px 22px rgba(0,0,0,0.55));
 }
 
 #button1{
@@ -153,5 +156,6 @@ width: 160px;
   border-radius: 6px;
   border: 0;
   cursor: pointer;
+  color: #907467;
 
 }
