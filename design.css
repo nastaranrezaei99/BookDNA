@@ -1,163 +1,72 @@
-@font-face{
-  font-family: "Lavishly Yours";
-  src: url("font/LavishlyYours-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-
-* { box-sizing: border-box; }
-
-
-html,body{
-    height: 100%;
-    margin : 0;
-}
-
-
+/* 1) بک‌گراند مثل عکس ۲: کمی تیره/وینتیج */
 body{
-    min-height: 100vh;
-    background-image:url("./bookdnaBack.png");
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position-y:bottom;
-    display: flex;
-    justify-content: center;
+  justify-content: center;
+  align-items: center;              /* وسط عمودی */
+  background-position: center bottom;
+  position: relative;
 }
 
-
-.Back{
-  width: min(1400px, 96vw);
-  margin: 0 auto;
-  text-align: center;
-  gap: 18px; 
-  padding-top: clamp(20px, 4vh, 70px);
+/* لایه‌ی تیره روی کل صفحه */
+body::before{
+  content:"";
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 28, 16, 0.25);  /* تیره‌ی ملایم */
+  z-index: 0;
+  pointer-events: none;
 }
 
-#titel {
-    font-family: 'uni-monospace';
-    color: #a0785a  ;
-    font-size: 60px;
-    font-weight: 600;
-    margin-top: 12px;
-}
+/* همه چیز روی overlay بیاد */
+#landing, #firstque{ position: relative; z-index: 1; }
 
 
-#titel2{
-    color: #907467
-}
-
-
-#first-Button{
-    
-    color: white; 
-    width: 210px; 
-    height: 40px; 
-    font-size: 20px; 
-    background-color :#b9a68d ; 
-    border-radius: 5px; 
-    border: 0; 
-    margin-right: 25px;
-   
-
-}
-
-
-#second-Button{
-    
-    color: white; 
-    width: 210px; 
-    height: 40px; 
-    font-size: 20px; 
-    background-color :#756d63 ; 
-    border-radius: 5px; 
-    border: 0;
-  
-}
-
-
-#dna-icon{
-  
-    width: clamp(80px, 6vw, 120px) !important; 
-    height: auto !important; 
-    margin: 24px auto;
-     
-}
-  
-
-
-
-#firstque {
-  display: none;
-}
-
-
+/* 2) کارت (Box) جمع‌وجورتر مثل عکس ۲ */
 .step1{
-    
-    margin-top: 70px;
+  margin-top: 0;                  /* چون وسط صفحه می‌خوایم */
+  width: min(560px, 92vw);        /* کوچیک‌تر و نزدیک مربع */
+  min-height: 440px;              /* قد کافی برای اینکه تصویر بیرون‌زده قشنگ بشه */
 
-  width: min(720px, 92vw);      /* کارت پهن‌تر، مثل عکس */
-  min-height: 360px;            /* ارتفاع کنترل‌شده */
-  padding: 26px 28px 22px;
+  background-color: rgba(70, 46, 19, 0.62);  /* کمی شفاف‌تر */
+  backdrop-filter: blur(16px);
 
-  background-color: rgba(70, 46, 19, 0.726);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61);
+  border-radius: 26px;            /* نرم‌تر مثل عکس ۲ */
+  box-shadow: 0 18px 45px rgba(0,0,0,0.55);
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
+  position: relative;             /* برای absolute کردن عکس */
+  overflow: visible;              /* اجازه بده عکس بیرون بزنه */
 
-  text-align: center; 
-    
+  padding: 26px 28px 90px;        /* فضای پایین برای عکس بیرون‌زده */
 }
 
+
+/* 3) عکس (دقیقاً حس عکس ۲): بزرگ و بیرون‌زده از پایین */
+#dosto{
+  width: 280px;                   /* بزرگ‌تر */
+  height: auto;
+
+  position: absolute;
+  left: 50%;
+  bottom: -55px;                  /* بیرون‌زدن از کارت */
+  transform: translateX(-50%);
+
+  border-radius: 18px;
+  filter:
+    drop-shadow(0 22px 26px rgba(0,0,0,0.55));
+}
+
+
+/* 4) ریزه‌کاری برای گزینه‌ها (مثل عکس ۲، جمع‌تر) */
+.step1 label{
+  width: auto;                    /* width ثابت رو بردار */
+  font-size: 18px;
+}
+
+.step1 input[type="radio"]{
+  transform: scale(1.1);
+}
 
 #question1{
-    text-align: center;
-    padding-top: 20px;
-    color: rgb(193, 194, 182);
-    font-weight: 100;
-
-}
-
-
-
-.step1 label{
-  color: rgb(235, 232, 227);
-  font-size: 20px;
-  font-weight: 300;
-  text-align: left;
-  display: inline-block;
-  
-  width: 220px; 
-}
-
-#q11{
-
-}
-
-
-
-#button1{
-    margin-top: 6px;
-    margin-right: 20px;
-  padding: 6px 14px;
-  border-radius: 6px;
-  border: 0;
-  cursor: pointer;
-  background-color: #907467;
-
-}
-#dosto{
-width: 150px;          /* اندازه عکس */
-  height: auto;
-  margin-top: 10px;
-
-  display: block;
-  border-radius: 14px;   /* اگر PNG شفاف نیست، نرم میشه */
-
-  filter: drop-shadow(0 18px 22px rgba(0,0,0,0.55));
+  padding-top: 0;
+  margin: 0;
+  color: rgb(210, 210, 200);
 }
