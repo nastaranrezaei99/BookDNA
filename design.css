@@ -50,36 +50,38 @@ body{
 
 #first-Button{
     
-    color: white;
-    width: 210px;
-    height: 40px;
-    font-size: 20px;
-    background-color :#b9a68d  ;
-    border-radius: 5px;
-    border: 0;
+    color: white; 
+    width: 210px; 
+    height: 40px; 
+    font-size: 20px; 
+    background-color :#b9a68d ; 
+    border-radius: 5px; 
+    border: 0; 
     margin-right: 25px;
+   
 
 }
 
 
 #second-Button{
     
-    color: white;
-    width: 210px;
-    height: 40px;
-    font-size: 20px;
-    background-color :#756d63  ;
-    border-radius: 5px;
+    color: white; 
+    width: 210px; 
+    height: 40px; 
+    font-size: 20px; 
+    background-color :#756d63 ; 
+    border-radius: 5px; 
     border: 0;
-    padding-top: 20px;
+  
 }
 
 
 #dna-icon{
-  width: clamp(150px, 12vw, 260px);
-  height: auto !important;
-  bottom: 300px;
-  padding-bottom: 150px;  
+  #dna-icon{ 
+    width: clamp(80px, 6vw, 120px) !important; 
+    height: auto !important; margin: 
+    24px auto; 
+}
   
 }
 
@@ -90,13 +92,7 @@ body{
 
 
 .step1{
-    margin-top: 80px;
-    width: min(650px,92vw);
-    height: min(400px,92vw);
-    background-color: rgba(70, 46, 19, 0.726);
-    backdrop-filter: blur 15px;
-    border-radius: 20px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61);
+    
     text-align: center;
     align-items: center;
     flex-direction: column;
@@ -128,6 +124,6 @@ body{
 
 #dosto{
 
-    margin-top: 20px;
+    margin-top: 500px;
 
 }
