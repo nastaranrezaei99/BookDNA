@@ -8,7 +8,8 @@
 
 * { box-sizing: border-box; }
 html,body{
-   margin: 0 !important; 
+    height: 100%;
+    margin : 0;
 }
 
 body{
@@ -77,7 +78,7 @@ body{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
   bottom: 300px;
-  margin: 0 auto 25px;   
+  margin-top: 20px;   
   
 }
 
@@ -87,7 +88,7 @@ body{
 }
 
 .step1{
-    position: center;
+    margin-top: 50px;
     width: min(650px,92vw);
     height: min(400px,92vw);
     background-color: rgba(70, 46, 19, 0.726);
