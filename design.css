@@ -108,11 +108,17 @@ body{
 
 }
 
-
+.step1{
+    align-items: center;
+}
 
 .step1 label{
   color: whitesmoke;
   font-size: 20px;
   font-weight: 300;
   text-align: left;
+}
+
+#q11{
+
 }
