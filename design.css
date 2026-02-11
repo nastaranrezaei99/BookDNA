@@ -78,7 +78,7 @@ body{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
   bottom: 300px;
-  margin-bottom: 60px;   
+  padding-bottom: 60px;   
   
 }
 
@@ -95,21 +95,20 @@ body{
     backdrop-filter: blur 15px;
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61);
-
+    text-align: center;
 }
 #question1{
     text-align: center;
-    
-    color: whitesmoke;
+    padding-top: 20px;
+    color: rgb(231, 221, 221);
     font-weight: 100;
 
 }
 
-#q11{
 
-    text-align: center;
-    font-size: 50px;
-    color: whitesmoke;
-    font-weight: 100;
+
+.step1 label{
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: 300;
 }
-
