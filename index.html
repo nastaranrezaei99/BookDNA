@@ -15,11 +15,11 @@
         
             <h1 id="titel">Book DNA </h1> 
             <h2 id="titel2">Let us help you find a book that feels just right.</h2>
-            <div><img src="./icon.png" id="dna-icon"></div>
+            <div><img src="./icon.png" id="dna-icon" alt="DNA icon"></div>
             
 
-            <button type="submit" id="first-Button"> Find my Book </button>
-            <button type="submit" id="seccond-Button"> Match my Mood </button>
+            <button type="button" id="first-Button"> Find my Book </button>
+            <button type="button" id="seccond-Button"> Match my Mood </button>
         
     </section>
 
@@ -28,26 +28,26 @@
 
 
 
-   <!--<form>
+   <form id="firstque">
         <section class="step active" data-step="q1">
         <h4> 1. When you read, you want ... </h4>
 
-        <input type="radio" name="q1" id="q11"> 
+        <input type="radio" name="q1" id="q11" value="Escape reality" required> 
         <label for="q11">Escape reality</label>
 
-        <input type="radio" name="q1" id="q12">
+        <input type="radio" name="q1" id="q12" value="Self insight">
         <label for="q12">Self insight</label>
         
-        <input type="radio" name="q1" id="q13">
+        <input type="radio" name="q1" id="q13" value="New perspectives">
         <label for="q13">New perspectives</label>
         <div>
-            <button type="button">Next</button>
-            <button type="button" data-action="back">Back</button>
+            <button type="button" data-action="next">Next</button>
+            
         </div>
         </section>
+    </form>
 
-
-
+        <!--
         <section class="step" data-step="q2">
         <h4> 2. You enjoy books that are ... </h4>
         <input type="radio" name="q2" id="q21"> 
