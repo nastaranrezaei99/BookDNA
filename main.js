@@ -10,7 +10,7 @@ const landing3 = document.getElementById("step2");
 
 const form3 = document.getElementById("thirdque")
 const landing4 = document.getElementById("step3");
-const button2 = document.getElementById("buttton2");
+const button2 = document.getElementById("button2");
 const back2 = document.getElementById("button32");
 
 
