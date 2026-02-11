@@ -76,7 +76,6 @@ body{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
   
-  margin: 24px auto;
   
 }
 
