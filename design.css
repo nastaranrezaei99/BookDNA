@@ -78,7 +78,7 @@ body{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
   bottom: 300px;
-  padding-bottom: 60px;   
+  padding-top: 60px;   
   
 }
 
@@ -98,6 +98,7 @@ body{
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61);
     text-align: center;
     align-items: center;
+    flex-direction: column;
     flex-direction: column;
 }
 
