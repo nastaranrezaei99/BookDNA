@@ -20,6 +20,7 @@ btn2.addEventListener("click" , () => {
     landing2.style.display="none";
 
     form2.style.display = "block";
+    landing3.style.display = "block";
 });
 
 back1.addEventListener("click" , () => {
