@@ -94,7 +94,7 @@ body{
 
 .step1{
     
-    margin-top: 80px;
+    margin-top: 70px;
 
   width: min(720px, 92vw);      /* کارت پهن‌تر، مثل عکس */
   min-height: 360px;            /* ارتفاع کنترل‌شده */
@@ -139,6 +139,18 @@ body{
 
 }
 
+
+
+#button1{
+    margin-top: 6px;
+    margin-right: 20px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  background-color: #907467;
+
+}
 #dosto{
 width: 150px;          /* اندازه عکس */
   height: auto;
@@ -148,14 +160,4 @@ width: 150px;          /* اندازه عکس */
   border-radius: 14px;   /* اگر PNG شفاف نیست، نرم میشه */
 
   filter: drop-shadow(0 18px 22px rgba(0,0,0,0.55));
-}
-
-#button1{
-    margin-top: 6px;
-  padding: 6px 14px;
-  border-radius: 6px;
-  border: 0;
-  cursor: pointer;
-  color: #907467;
-
 }
