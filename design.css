@@ -94,17 +94,24 @@ body{
 
 .step1{
     
-    
-        margin-top: 80px; 
-        width: min(650px,92vw); 
-        height: min(400px,92vw); 
-        background-color: rgba(70, 46, 19, 0.726); 
-        backdrop-filter: blur 15px; 
-        border-radius: 20px; 
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
-        text-align: center; 
-        align-items: center; 
-        flex-direction: column; 
+    width: min(650px, 92vw);
+  min-height: 400px;        /* به جای height ثابت */
+  padding: 28px 28px 18px;  /* فضای داخلی */
+
+  background-color: rgba(70, 46, 19, 0.72);
+  backdrop-filter: blur(15px);
+
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61);
+
+  text-align: center;
+
+  display: flex;            /* مهم */
+  flex-direction: column;   /* مهم */
+  align-items: center;      /* وسط‌چین افقی */
+  gap: 14px;                /* فاصله منظم بین بخش‌ها */
+
+  margin-top: 0;  
     
 }
 
@@ -134,8 +141,17 @@ body{
 }
 
 #dosto{
+width: 160px;            
+  height: auto;
+  margin-top: 10px;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.55));
+}
 
-   
-    
+#button1{
+    margin-top: 6px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
 
 }
