@@ -96,7 +96,7 @@ body{
    margin-top: 80px; 
     width: min(650px,92vw); 
     height: min(400px,92vw); 
-    background-color: rgba(70, 46, 19, 0.726); 
+    background-color: rgba(70, 46, 19, 0.555); 
     backdrop-filter: blur 15px; 
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
@@ -140,6 +140,7 @@ body{
   border-radius: 6px;
   border: 0;
   cursor: pointer;
-  background-color: #907467;
+  background-color: #79645a;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
 
 }
