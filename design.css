@@ -196,7 +196,7 @@ body{
   width: 220px; 
 }
 #button2{
-    margin-top: 6px;
+    margin-top: 20px;
     margin-right: 20px;
   padding: 6px 14px;
   border-radius: 6px;
@@ -213,7 +213,7 @@ body{
 
     width: 150;
     height: 50;
-    margin-top: 6px;
+    margin-top: 20px;
     margin-right: 25px;
   padding: 6px 14px;
   border-radius: 6px;
