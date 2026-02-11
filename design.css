@@ -76,7 +76,7 @@ body{
 #dna-icon{
   width: clamp(150px, 12vw, 260px);
   height: auto !important;
-  bottom: 100px;
+  bottom: 300px;
   
 }
 
@@ -89,7 +89,7 @@ body{
 
     width: min(650px,92vw);
     height: min(450px,92vw);
-    background-color: rgba(59, 37, 2, 0.45);
+    background-color: rgba(44, 29, 9, 0.473);
     backdrop-filter: blur 8px;
     
 
