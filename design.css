@@ -94,11 +94,18 @@ body{
 
 .step1{
     
-    text-align: center;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    display: flex;
+    .step1{ 
+        margin-top: 80px; 
+        width: min(650px,92vw); 
+        height: min(400px,92vw); 
+        background-color: rgba(70, 46, 19, 0.726); 
+        backdrop-filter: blur 15px; 
+        border-radius: 20px; 
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
+        text-align: center; 
+        align-items: center; 
+        flex-direction: column; 
+    }
 }
 
 
