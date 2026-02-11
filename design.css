@@ -100,8 +100,8 @@ body{
     backdrop-filter: blur 15px; 
     border-radius: 20px;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
-    text-align: center; 
-    align-items: center; 
+    text-align: right; 
+    align-items: right; 
      position: relative;
     flex-direction: column; 
 }
@@ -145,7 +145,7 @@ body{
 
 }
 #dosto{
-    width: 400px;
+    width: 500px;
     height: 400px;
     position: absolute;
     left: 40px;
@@ -153,8 +153,8 @@ body{
 
     filter: drop-shadow(0 25px 30px rgba(0,0,0,0.6));
     pointer-events: none;
-    transform: translateZ(30px);
-    z-index: 3; 
+    transform: translateZ(40px);
+    z-index: 5; 
 
     
 }
