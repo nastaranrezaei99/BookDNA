@@ -223,3 +223,71 @@ body{
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
 
 }
+
+#thirdque {
+  display: none;
+}
+
+.step3{
+
+    margin-top: 80px; 
+    width: min(650px,92vw); 
+    height: min(400px,92vw); 
+    background-color: rgba(70, 46, 19, 0.555); 
+    backdrop-filter: blur 15px; 
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
+    text-align: center; 
+    align-items: center; 
+     position: relative;
+    flex-direction: column; 
+
+}
+
+#question3{
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(193, 194, 182);
+    font-weight: 100;
+
+}
+
+
+
+.step3 label{
+  color: rgb(235, 232, 227);
+  font-size: 20px;
+  font-weight: 300;
+  text-align: left;
+  display: inline-block;
+  
+  width: 220px; 
+}
+#button3{
+    margin-top: 20px;
+    margin-right: 20px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  background-color: #79645a;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
+  width: 150;
+    height: 50;
+
+}
+
+#button32{
+
+    width: 150;
+    height: 50;
+    margin-top: 20px;
+    margin-right: 25px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 0;
+  cursor: pointer;
+  background-color: #79645a;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
+
+}
