@@ -102,7 +102,7 @@ body{
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
     text-align: center; 
     align-items: center; 
-     
+     position: relative;
     flex-direction: column; 
 }
 
@@ -143,4 +143,14 @@ body{
   background-color: #79645a;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
 
+}
+#dosto{
+    position: absolute;
+    left: 40px;
+    bottom:0px ;
+
+    filter: drop-shadow(0 25px 30px rgba(0,0,0,0.6));
+    pointer-events: none;
+
+    transform: rotate(-4deg);
 }
