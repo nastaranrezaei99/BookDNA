@@ -77,13 +77,14 @@ body{
 
 
 #dna-icon{
-  #dna-icon{ 
+  
     width: clamp(80px, 6vw, 120px) !important; 
-    height: auto !important; margin: 
-    24px auto; 
+    height: auto !important; 
+    margin: 24px auto;
+     
 }
   
-}
+
 
 
 #firstque {
@@ -104,7 +105,7 @@ body{
 #question1{
     text-align: center;
     padding-top: 20px;
-    color: rgb(231, 221, 221);
+    color: rgb(71, 53, 15);
     font-weight: 100;
 
 }
@@ -112,10 +113,13 @@ body{
 
 
 .step1 label{
-  color: whitesmoke;
+  color: rgb(71, 53, 15);
   font-size: 20px;
   font-weight: 300;
   text-align: left;
+  display: inline-block;
+  text-align: left; 
+  width: 220px; 
 }
 
 #q11{
@@ -124,6 +128,6 @@ body{
 
 #dosto{
 
-    margin-top: 500px;
+   
 
 }
