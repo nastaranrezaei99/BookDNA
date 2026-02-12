@@ -272,13 +272,14 @@ body{
   cursor: pointer;
   background-color: #79645a;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.61); 
-  width: 150;
-    height: 50;
+  width: 300;
+    height: 100;
+    color: aliceblue;
 
 }
 
 #button32{
-
+  color: aliceblue;
     width: 150;
     height: 50;
     margin-top: 20px;
