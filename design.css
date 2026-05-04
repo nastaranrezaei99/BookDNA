@@ -1,0 +1,15 @@
+@font-face{
+  font-family: "Lavishly Yours";
+  src: url("font/LavishlyYours-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+* { box-sizing: border-box; }
+
+
+html,body{
+    height: 100%;
+    margin : 0;
+}
