@@ -23,7 +23,7 @@ body{
   padding-top: 40px;
 }
 
-.titel{
+#titel{
     font-family: 'uni-monospace';
     color: #a0785a  ;
     font-size: 60px;
