@@ -17,10 +17,9 @@ body{
 }
 
 .Back{
-  width: min(1400px, 100vw);  /*viewport Width*/
-  margin: 0 auto;
+  width: min(1400px, 90vw);  /*viewport Width*/
   text-align: center;
-  gap: 18px; 
-  padding-top: clamp(20px, 4vh, 70px);
+  gap: 18px; /*Zeilenabstand*/
+  padding-top: 40px;
 }
 
