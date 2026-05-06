@@ -30,3 +30,22 @@ body{
     font-weight: 600;
     margin-top: 12px;
 }
+
+#titel2{
+    color: #907467
+}
+
+
+#first-Button{
+    
+    color: white; 
+    width: 100px; 
+    height: 40px; 
+    font-size: 20px; 
+    background-color :#b9a68d ; 
+    border-radius: 5px; 
+    border: 0; 
+    margin-right: 25px;
+   
+
+}
