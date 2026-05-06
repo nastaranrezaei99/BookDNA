@@ -49,3 +49,17 @@ body{
    
 
 }
+
+#second-Button{
+    
+    color: white; 
+    width: 200px; 
+    height: 40px; 
+    font-size: 25px; 
+    background-color :#b9a68d ; 
+    border-radius: 5px; 
+    border: 0; 
+    margin-right: 30px;
+   
+
+}
