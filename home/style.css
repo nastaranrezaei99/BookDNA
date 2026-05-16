@@ -98,7 +98,7 @@ body {
 
   padding: 70px 8%;
 
-  background-color: transparent;
+  
 }
 
 .hero-text h1 {
@@ -108,13 +108,13 @@ body {
   margin: 20px 0;
   font-weight: normal;
   color: #f5eee6;
-  background-color: transparent;
+  
 }
 
 .hero-text span {
   color: #f1d3c4;
   font-style: italic;
-  background-color: transparent;
+  
 }
 
 .label {
