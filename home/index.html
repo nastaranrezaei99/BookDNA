@@ -4,248 +4,147 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BookDNA</title>
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
+<header class="navbar">
+  <div class="logo">
+    <span class="dna-circle">🧬</span>
+    BookDNA
+  </div>
 
-    <div class="logo">
-      <span class="dna-circle">🧬</span>
-      BookDNA
+  <nav>
+    <a href="#recommended">Discover</a>
+    <a href="#search">Search</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="#celebrity">Celebrity Picks</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="#">Sign In</a>
+    <a href="quiz.html" class="btn-small">Get Started</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="label">PERSONALIZED BOOK DISCOVERY</p>
+
+    <h1>Find Books,<br>that fit <span>you</span></h1>
+
+    <p class="description">
+      Discover literature that matches your personality,
+      mood and interests.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="quiz.html" class="btn-primary">Start Quiz →</a>
+      <a href="#recommended" class="btn-secondary">Discover Books</a>
+    </div>
+  </div>
+
+  <div class="quote-card">
+    <p class="quote">
+      “A book must be the axe for the frozen sea within us.”
+    </p>
+    <p class="author">FRANZ KAFKA</p>
+  </div>
+</section>
+
+<section id="recommended" class="recommendations">
+  <div class="section-header">
+    <div>
+      <p class="label">CURATED FOR YOU</p>
+      <h2>Recommended For You</h2>
+      <p class="section-text">Books that match your unique reading DNA</p>
     </div>
 
-    <nav>
-      <a href="#recommended">Discover</a>
-      <a href="#search">Search</a>
-      <a href="quiz.html">Quiz</a>
-      <a href="#celebrity">Celebrity Picks</a>
-      <a href="#about">About</a>
-    </nav>
+    <a href="#" class="view-all">View All →</a>
+  </div>
 
-    <div class="nav-actions">
-      <a href="#" class="login">Sign In</a>
-      <a href="quiz.html" class="btn-small">Get Started</a>
-    </div>
+  <div class="book-grid">
 
-  </header>
+    <div class="book-card">
+      <div class="book-cover cover-one"></div>
+      <span class="save-icon">♡</span>
+      <span class="match">95% Match</span>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
+      <div class="book-info">
+        <h3>The Fall</h3>
+        <p>Albert Camus</p>
+        <p class="rating">★★★★★ 4.8 <span>2.5K ratings</span></p>
+        <p class="reviews">1234 reviews</p>
 
-    <div class="hero-text">
-
-      <p class="label">
-        PERSONALIZED BOOK DISCOVERY
-      </p>
-
-      <h1>
-        Find Books,<br>
-        that fit <span>you</span>
-      </h1>
-
-      <p class="description">
-        Discover literature that matches your personality,
-        mood and interests.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="quiz.html" class="btn-primary">
-          Start Quiz →
-        </a>
-
-        <a href="#recommended" class="btn-secondary">
-          Discover Books
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- QUOTE CARD -->
-    <div class="quote-card">
-
-      <div class="circle-img">
-        🧬
-      </div>
-
-      <p class="quote">
-        “A book must be the axe
-        for the frozen sea within us.”
-      </p>
-
-      <p class="author">
-        FRANZ KAFKA
-      </p>
-
-    </div>
-
-  </section>
-
-  <!-- RECOMMENDED -->
-  <section id="recommended" class="recommendations">
-
-    <div class="section-header">
-
-      <div>
-
-        <p class="label">
-          CURATED FOR YOU
-        </p>
-
-        <h2>
-          Recommended <span>For You</span>
-        </h2>
-
-        <p class="section-text">
-          Books that match your unique reading DNA
-        </p>
-
-      </div>
-
-      <a href="#" class="view-all">
-        View All →
-      </a>
-
-    </div>
-
-    <!-- BOOK GRID -->
-    <div class="book-grid">
-
-      <!-- BOOK 1 -->
-      <div class="book-card">
-
-        <div class="book-cover cover-one"></div>
-
-        <span class="save-icon">♡</span>
-
-        <span class="match">95% Match</span>
-
-        <div class="book-info">
-
-          <h3>The Fall</h3>
-
-          <p>Albert Camus</p>
-
-          <p class="rating">
-            ★★★★★ 4.8
-            <span>2.5K ratings</span>
-          </p>
-
-          <p class="reviews">1234 reviews</p>
-
-          <div class="tags">
-            <span>Existential</span>
-            <span>Philosophical</span>
-            <span>Psychological</span>
-          </div>
-
+        <div class="tags">
+          <span>Existential</span>
+          <span>Philosophical</span>
+          <span>Psychological</span>
         </div>
-
       </div>
-
-      <!-- BOOK 2 -->
-      <div class="book-card">
-
-        <div class="book-cover cover-two"></div>
-
-        <span class="save-icon">♡</span>
-
-        <span class="match">92% Match</span>
-
-        <div class="book-info">
-
-          <h3>The Metamorphosis</h3>
-
-          <p>Franz Kafka</p>
-
-          <p class="rating">
-            ★★★★★ 4.9
-            <span>3.2K ratings</span>
-          </p>
-
-          <p class="reviews">1876 reviews</p>
-
-          <div class="tags">
-            <span>Absurd</span>
-            <span>Classic</span>
-            <span>Alienation</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- BOOK 3 -->
-      <div class="book-card">
-
-        <div class="book-cover cover-three"></div>
-
-        <span class="save-icon">♡</span>
-
-        <span class="match">89% Match</span>
-
-        <div class="book-info">
-
-          <h3>White Nights</h3>
-
-          <p>Fyodor Dostoevsky</p>
-
-          <p class="rating">
-            ★★★★★ 4.7
-            <span>4.1K ratings</span>
-          </p>
-
-          <p class="reviews">2134 reviews</p>
-
-          <div class="tags">
-            <span>Romance</span>
-            <span>Melancholic</span>
-            <span>Classic</span>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- BOOK 4 -->
-      <div class="book-card">
-
-        <div class="book-cover cover-four"></div>
-
-        <span class="save-icon">♡</span>
-
-        <span class="match">87% Match</span>
-
-        <div class="book-info">
-
-          <h3>The Count of Monte Cristo</h3>
-
-          <p>Alexandre Dumas</p>
-
-          <p class="rating">
-            ★★★★★ 4.9
-            <span>5.3K ratings</span>
-          </p>
-
-          <p class="reviews">3562 reviews</p>
-
-          <div class="tags">
-            <span>Adventure</span>
-            <span>Revenge</span>
-            <span>Historical</span>
-          </div>
-
-        </div>
-
-      </div>
-
     </div>
 
-  </section>
+    <div class="book-card">
+      <div class="book-cover cover-two"></div>
+      <span class="save-icon">♡</span>
+      <span class="match">92% Match</span>
+
+      <div class="book-info">
+        <h3>The Metamorphosis</h3>
+        <p>Franz Kafka</p>
+        <p class="rating">★★★★★ 4.9 <span>3.2K ratings</span></p>
+        <p class="reviews">1876 reviews</p>
+
+        <div class="tags">
+          <span>Absurd</span>
+          <span>Classic</span>
+          <span>Alienation</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover cover-three"></div>
+      <span class="save-icon">♡</span>
+      <span class="match">89% Match</span>
+
+      <div class="book-info">
+        <h3>White Nights</h3>
+        <p>Fyodor Dostoevsky</p>
+        <p class="rating">★★★★★ 4.7 <span>4.1K ratings</span></p>
+        <p class="reviews">2134 reviews</p>
+
+        <div class="tags">
+          <span>Romance</span>
+          <span>Melancholic</span>
+          <span>Classic</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-card">
+      <div class="book-cover cover-four"></div>
+      <span class="save-icon">♡</span>
+      <span class="match">87% Match</span>
+
+      <div class="book-info">
+        <h3>The Count of Monte Cristo</h3>
+        <p>Alexandre Dumas</p>
+        <p class="rating">★★★★★ 4.9 <span>5.3K ratings</span></p>
+        <p class="reviews">3562 reviews</p>
+
+        <div class="tags">
+          <span>Adventure</span>
+          <span>Revenge</span>
+          <span>Historical</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 </body>
 </html>
