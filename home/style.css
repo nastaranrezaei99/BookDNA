@@ -1,433 +1,251 @@
-* {
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookDNA</title>
 
-html {
-  scroll-behavior: smooth;
-}
+  <link rel="stylesheet" href="style.css">
+</head>
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
+<body>
 
-  background-image: url("./bookdnaBack.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  <!-- NAVBAR -->
+  <header class="navbar">
 
-  color: #33251f;
-}
+    <div class="logo">
+      <span class="dna-circle">🧬</span>
+      BookDNA
+    </div>
 
-/* NAVBAR */
+    <nav>
+      <a href="#recommended">Discover</a>
+      <a href="#search">Search</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="#celebrity">Celebrity Picks</a>
+      <a href="#about">About</a>
+    </nav>
 
-.navbar {
-  height: 70px;
-  background-color: rgba(120, 95, 75, 0.55);
-  backdrop-filter: blur(6px);
-  color: white;
+    <div class="nav-actions">
+      <a href="#" class="login">Sign In</a>
+      <a href="quiz.html" class="btn-small">Get Started</a>
+    </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  </header>
 
-  padding: 0 8%;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+  <!-- HERO SECTION -->
+  <section class="hero">
 
-.logo {
-  font-weight: bold;
-  font-size: 20px;
+    <div class="hero-text">
 
-  display: flex;
-  align-items: center;
+      <p class="label">
+        PERSONALIZED BOOK DISCOVERY
+      </p>
 
-  color: #f5b6a1;
-}
+      <h1>
+        Find Books,<br>
+        that fit <span>you</span>
+      </h1>
 
-.dna-circle {
-  width: 34px;
-  height: 34px;
+      <p class="description">
+        Discover literature that matches your personality,
+        mood and interests.
+      </p>
 
-  border-radius: 50%;
+      <div class="hero-buttons">
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+        <a href="quiz.html" class="btn-primary">
+          Start Quiz →
+        </a>
 
-  margin-right: 8px;
+        <a href="#recommended" class="btn-secondary">
+          Discover Books
+        </a>
 
-  font-size: 18px;
-}
+      </div>
 
-.navbar nav a,
-.nav-actions a {
-  color: white;
-  text-decoration: none;
+    </div>
 
-  margin-left: 22px;
+    <!-- QUOTE CARD -->
+    <div class="quote-card">
 
-  font-size: 14px;
+      <div class="circle-img">
+        🧬
+      </div>
 
-  transition: 0.3s;
-}
+      <p class="quote">
+        “A book must be the axe
+        for the frozen sea within us.”
+      </p>
 
-.navbar nav a:hover,
-.nav-actions a:hover {
-  color: #f5b6a1;
-}
+      <p class="author">
+        FRANZ KAFKA
+      </p>
 
-.btn-small {
-  background-color: #b9a68d;
+    </div>
 
-  padding: 8px 16px;
+  </section>
 
-  border-radius: 20px;
-}
+  <!-- RECOMMENDED -->
+  <section id="recommended" class="recommendations">
 
-/* HERO */
+    <div class="section-header">
 
-.hero {
-  min-height: 700px;
+      <div>
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+        <p class="label">
+          CURATED FOR YOU
+        </p>
 
-  padding: 70px 8%;
+        <h2>
+          Recommended <span>For You</span>
+        </h2>
 
-  
-}
-
-.hero-text h1 {
-  font-family: Georgia, serif;
-  font-size: 76px;
-  line-height: 1.1;
-  margin: 20px 0;
-  font-weight: normal;
-  color: #f5eee6;
-  
-}
-
-.hero-text span {
-  color: #f1d3c4;
-  font-style: italic;
-  
-}
-
-.label {
-  color: #f5eee6;
-  letter-spacing: 2px;
-  font-size: 12px;
-  background-color: transparent;
-}
-
-.description {
-  max-width: 430px;
-
-  color: #5c4b42;
-
-  line-height: 1.6;
-
-  font-size: 18px;
-}
-
-.hero-buttons {
-  margin-top: 28px;
-}
-
-.btn-primary,
-.btn-secondary {
-  text-decoration: none;
-  padding: 14px 24px;
-  border-radius: 8px;
-  margin-right: 12px;
-  display: inline-block;
-}
-
-.btn-primary {
-  background-color: rgba(120, 95, 75, 0.75);
-  color: white;
-  border: none;
-}
-
-.btn-secondary {
-  background-color: rgba(120, 95, 75, 0.45);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.35);
-}
-
-.quote-card {
-  width: 360px;
-  min-height: 430px;
+        <p class="section-text">
+          Books that match your unique reading DNA
+        </p>
 
-  background-color: rgba(120, 95, 75, 0.55);
-  backdrop-filter: blur(6px);
+      </div>
 
-  border-radius: 20px;
-  padding: 45px;
+      <a href="#" class="view-all">
+        View All →
+      </a>
 
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  border: 1px solid rgba(255,255,255,0.25);
-}
+    </div>
 
-.circle-img {
-  width: 90px;
-  height: 90px;
+    <!-- BOOK GRID -->
+    <div class="book-grid">
 
-  border-radius: 50%;
+      <!-- BOOK 1 -->
+      <div class="book-card">
 
-  background: white;
+        <div class="book-cover cover-one"></div>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+        <span class="save-icon">♡</span>
 
-  font-size: 32px;
+        <span class="match">95% Match</span>
 
-  margin-bottom: 55px;
-}
+        <div class="book-info">
 
-.quote {
-  font-family: Georgia, serif;
-  font-size: 22px;
-  line-height: 1.6;
-  color: #f5eee6;
-  background-color: transparent;
-}
+          <h3>The Fall</h3>
 
-.author {
-  margin-top: 50px;
-  font-size: 12px;
-  letter-spacing: 3px;
-  color: #f5d8c8;
-  background-color: transparent;
-}
+          <p>Albert Camus</p>
 
-/* RECOMMENDATIONS */
+          <p class="rating">
+            ★★★★★ 4.8
+            <span>2.5K ratings</span>
+          </p>
 
-.recommendations {
-  padding: 90px 8%;
+          <p class="reviews">1234 reviews</p>
 
-  background-color: transparent;
-}
+          <div class="tags">
+            <span>Existential</span>
+            <span>Philosophical</span>
+            <span>Psychological</span>
+          </div>
 
-.section-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+        </div>
 
-  margin-bottom: 40px;
-}
+      </div>
 
-.section-header h2 {
-  font-family: Georgia, serif;
+      <!-- BOOK 2 -->
+      <div class="book-card">
 
-  font-size: 42px;
+        <div class="book-cover cover-two"></div>
 
-  font-weight: normal;
+        <span class="save-icon">♡</span>
 
-  margin: 0;
+        <span class="match">92% Match</span>
 
-  color: #2d1f18;
-}
+        <div class="book-info">
 
-.section-header h2 span {
-  color: #a0785a;
-  font-style: italic;
-}
+          <h3>The Metamorphosis</h3>
 
-.section-text {
-  color: #5c4b42;
-  line-height: 1.6;
-}
+          <p>Franz Kafka</p>
 
-.view-all {
-  color: #a0785a;
-  text-decoration: none;
-  font-size: 14px;
-}
+          <p class="rating">
+            ★★★★★ 4.9
+            <span>3.2K ratings</span>
+          </p>
 
-/* BOOK GRID */
+          <p class="reviews">1876 reviews</p>
 
-.book-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+          <div class="tags">
+            <span>Absurd</span>
+            <span>Classic</span>
+            <span>Alienation</span>
+          </div>
 
-  gap: 28px;
-}
+        </div>
 
-.book-card {
-  background-color: rgba(255, 250, 244, 0.85);
+      </div>
 
-  border-radius: 18px;
+      <!-- BOOK 3 -->
+      <div class="book-card">
 
-  overflow: hidden;
+        <div class="book-cover cover-three"></div>
 
-  position: relative;
+        <span class="save-icon">♡</span>
 
-  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+        <span class="match">89% Match</span>
 
-  backdrop-filter: blur(4px);
+        <div class="book-info">
 
-  border: 1px solid rgba(185, 166, 141, 0.25);
+          <h3>White Nights</h3>
 
-  transition: 0.3s;
-}
+          <p>Fyodor Dostoevsky</p>
 
+          <p class="rating">
+            ★★★★★ 4.7
+            <span>4.1K ratings</span>
+          </p>
 
-.book-cover {
-  height: 250px;
+          <p class="reviews">2134 reviews</p>
 
-  background-size: cover;
-  background-position: center;
-}
+          <div class="tags">
+            <span>Romance</span>
+            <span>Melancholic</span>
+            <span>Classic</span>
+          </div>
 
-.cover-one {
-  background: linear-gradient(135deg, #5f7fa0, #d9b38c);
-}
+        </div>
 
-.cover-two {
-  background: linear-gradient(135deg, #3d2d2a, #c77c3b);
-}
+      </div>
 
-.cover-three {
-  background: linear-gradient(135deg, #e7c8c8, #f5ece7);
-}
+      <!-- BOOK 4 -->
+      <div class="book-card">
 
-.cover-four {
-  background: linear-gradient(135deg, #2d2019, #8b765e);
-}
+        <div class="book-cover cover-four"></div>
 
-.save-icon {
-  position: absolute;
-  top: 16px;
-  left: 16px;
+        <span class="save-icon">♡</span>
 
-  background-color: white;
-  color: #4a2f24;
+        <span class="match">87% Match</span>
 
-  width: 30px;
-  height: 30px;
+        <div class="book-info">
 
-  border-radius: 50%;
+          <h3>The Count of Monte Cristo</h3>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+          <p>Alexandre Dumas</p>
 
-.match {
-  position: absolute;
-  top: 16px;
-  right: 16px;
+          <p class="rating">
+            ★★★★★ 4.9
+            <span>5.3K ratings</span>
+          </p>
 
-  background-color: white;
-  color: #a0785a;
+          <p class="reviews">3562 reviews</p>
 
-  padding: 7px 12px;
+          <div class="tags">
+            <span>Adventure</span>
+            <span>Revenge</span>
+            <span>Historical</span>
+          </div>
 
-  border-radius: 20px;
+        </div>
 
-  font-size: 12px;
-}
+      </div>
 
-.book-info {
-  padding: 18px;
-}
+    </div>
 
-.book-info h3 {
-  font-family: Georgia, serif;
-
-  font-size: 18px;
-
-  margin: 0 0 6px;
-
-  color: #2d1f18;
-}
-
-.book-info p {
-  margin: 0 0 10px;
-
-  color: #5c4b42;
-
-  font-size: 14px;
-}
-
-.rating {
-  color: #a0785a !important;
-}
-
-.rating span {
-  color: #5c4b42;
-  margin-left: 12px;
-}
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
-.tags span {
-  background-color: #f1e6dc;
-  color: #6b4a3a;
-
-  padding: 5px 9px;
-
-  border-radius: 14px;
-
-  font-size: 11px;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 1100px) {
-
-  .book-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-}
-
-@media (max-width: 900px) {
-
-  .navbar {
-    flex-direction: column;
-
-    height: auto;
-
-    padding: 15px;
-  }
-
-  .navbar nav {
-    margin: 10px 0;
-  }
-
-  .hero {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .hero-text h1 {
-    font-size: 50px;
-  }
-
-  .quote-card {
-    width: 100%;
-    margin-top: 40px;
-  }
-
-}
-
-@media (max-width: 650px) {
-
-  .book-grid {
-    grid-template-columns: 1fr;
-  }
-
-}
-
+  </section>
+</body>
+</html>
