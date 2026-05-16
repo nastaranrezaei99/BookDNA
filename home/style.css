@@ -1,387 +1,198 @@
-* {
-    box-sizing: border-box;
-}
+body{
+    margin:0;
+    font-family:Arial;
 
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-
-    background-image: url("./bookdnaBack.png");
-    background-size: cover;
-    background-position: center;
+    background-image:url("./bookdnaBack.png");
+    background-size:cover;
+    color:#33251f;
     background-repeat: no-repeat;
-
-    color: #33251f;
 }
 
 /* NAVBAR */
 
-.navbar {
-    height: 70px;
-    background-color: #b9a68d;
-    color: white;
+.navbar{
+    background-color:#614c32;
+    padding:20px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 8%;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
 }
 
-.logo {
-    font-weight: bold;
-    font-size: 20px;
+.logo{
+    color:#f5b6a1;
+    font-size:22px;
+    font-weight:bold;
 
-    display: flex;
-    align-items: center;
-
-    color: #f5b6a1;
+    display:flex;
+    align-items:center;
 }
 
-.dna-circle {
-    width: 34px;
-    height: 34px;
+.dna-circle{
+    width:35px;
+    height:45px;
 
-    border-radius: 50%;
+    margin-right:5px;
 
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    margin-right: 8px;
-
-    font-size: 18px;
+    background-image:url("./icon.png");
+    background-size:cover;
 }
 
-.navbar nav a,
-.nav-actions a {
-    color: white;
-    text-decoration: none;
-
-    margin-left: 22px;
-
-    font-size: 14px;
-
-    transition: 0.3s;
-}
-
-.navbar nav a:hover,
-.nav-actions a:hover {
-    color: #f5b6a1;
-}
-
-.btn-small {
-    background-color: #b9a68d;
-
-    padding: 8px 16px;
-
-    border-radius: 20px;
+.navbar a{
+    color:white;
+    text-decoration:none;
+    margin-left:15px;
 }
 
 /* HERO */
 
-.hero {
-    min-height: 700px;
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 70px 8%;
-
-
+    padding:80px;
 }
 
-.hero-text h1 {
-    font-family: Georgia, serif;
-    font-size: 76px;
-    line-height: 1.1;
-    margin: 20px 0;
-    font-weight: normal;
-    color: #88571a;
-
+.hero-text h1{
+    font-size:70px;
+    color:#88571a;
 }
 
-.hero-text span {
-    color: #c07854;
-    font-style: italic;
-
+.hero-text span{
+    color:#c07854;
 }
 
-.label {
-    color: #f5eee6;
-    letter-spacing: 2px;
-    font-size: 12px;
-    background-color: transparent;
+.description{
+    width:400px;
+    color:#5c4b42;
 }
 
-.description {
-    max-width: 430px;
+.btn-primary{
+    background-color:#694f44;
+    color:white;
 
-    color: #5c4b42;
+    padding:12px 20px;
 
-    line-height: 1.6;
+    text-decoration:none;
 
-    font-size: 18px;
+    border-radius:8px;
 }
 
-.hero-buttons {
-    margin-top: 28px;
+.btn-secondary{
+    background-color:#b9a68d;
+    color:white;
+
+    padding:12px 20px;
+
+    text-decoration:none;
+
+    border-radius:8px;
 }
 
-.btn-primary,
-.btn-secondary {
-    text-decoration: none;
-    padding: 14px 24px;
-    border-radius: 8px;
-    margin-right: 12px;
-    display: inline-block;
+/* KAFKA CARD */
+
+.quote-card{
+    width:350px;
+    height:430px;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    background-color:#907467;
+
+    background-image:url("./kafka.jpg");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
-.btn-primary {
-    background-color: #694f44;
-    color: white;
-    border: none;
+.quote{
+    color:white;
+    font-size:22px;
 }
 
-.btn-secondary {
-    background-color: #b9a68d;
-    color: white;
-    border: 1px solid #534d4a;
-}
-
-.quote-card {
-    width: 360px;
-    min-height: 430px;
-
-    background-color: #907467;
-
-    border-radius: 20px;
-    padding: 45px;
-
-    
-    border: 1px solid #b9a68d;
-    background-image: url("./kafka.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-
-.quote {
-    position: initial;
-    font-family: Georgia, serif;
-    font-size: 22px;
-    line-height: 1.6;
-    color: #f5eee6;
-    background-color: transparent;
-}
-
-.author {
-    position: initial;
-    margin-top: 50px;
-    font-size: 12px;
-    letter-spacing: 3px;
-    color: #f5d8c8;
-    background-color: transparent;
+.author{
+    color:#f5d8c8;
+    margin-top:40px;
 }
 
 /* RECOMMENDATIONS */
 
-.recommendations {
-    padding: 90px 8%;
+.recommendations{
+    padding:80px;
 
-    background-color: transparent;
+}
+.recommendations h2{
+    color:#88571a;
+    font-size: 40px;
 }
 
-.section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    margin-bottom: 40px;
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
 }
 
-.section-header h2 {
-    font-family: Georgia, serif;
-
-    font-size: 42px;
-
-    font-weight: normal;
-
-    margin: 0;
-
-    color: #2d1f18;
+.view-all{
+    color:#88571a;
+    text-decoration:none;
 }
 
-.section-header h2 span {
-    color: #a0785a;
-    font-style: italic;
+.book-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
 }
 
-.section-text {
-    color: #5c4b42;
-    line-height: 1.6;
+.book-card{
+    background-color:#fffaf4;
+
+    border-radius:15px;
+
+    border:1px solid #d8c6b8;
+
+    cursor:pointer;
 }
 
-.view-all {
-    color: #a0785a;
-    text-decoration: none;
-    font-size: 14px;
+.book-cover{
+    height:250px;
+
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
-/* BOOK GRID */
-
-.book-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 28px;
+.cover-one{
+    background-image:url("./fall.jpg");
 }
 
-.book-card {
-    background-color: #fffaf4;
-
-    border-radius: 18px;
-
-    overflow: hidden;
-
-    position: relative;
-
-    
-
-    border: 1px solid #d8c6b8;
-
-    transition: 0.3s;
-    cursor: pointer;
+.cover-two{
+    background-image:url("./Metamorphosis.webp");
 }
 
-
-.book-cover {
-    height: 250px;
-
-    background-size: cover;
-    background-position: center;
+.cover-three{
+    background-image:url("./WhiteNights.jpg");
 }
 
-.cover-one {
-    
-    background-image: url("./fall.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #d8d8d8;
+.cover-four{
+    background-image:url("./TheCountofMonteCristo.jpg");
 }
 
-.cover-two {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #d8d8d8;
-    background-image: url("./Metamorphosis.webp");
+.book-info{
+    padding:15px;
 }
 
-.cover-three {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #d8d8d8;
-    background-image: url("./WhiteNights.jpg");
-}
+.tags span{
+    background-color:#f1e6dc;
 
-.cover-four {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: #d8d8d8;
-    background-image: url("./TheCountofMonteCristo.jpg");
-}
+    padding:5px 10px;
 
-.save-icon {
-    position: absolute;
-    top: 16px;
-    left: 16px;
+    border-radius:10px;
 
-    background-color: white;
-    color: #4a2f24;
-
-    width: 30px;
-    height: 30px;
-
-    border-radius: 50%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.match {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-
-    background-color: white;
-    color: #a0785a;
-
-    padding: 7px 12px;
-
-    border-radius: 20px;
-
-    font-size: 12px;
-}
-
-.book-info {
-    padding: 18px;
-}
-
-.book-info h3 {
-    font-family: Georgia, serif;
-
-    font-size: 18px;
-
-    margin: 0 0 6px;
-
-    color: #2d1f18;
-}
-
-.book-info p {
-    margin: 0 0 10px;
-
-    color: #5c4b42;
-
-    font-size: 14px;
-}
-
-.rating {
-    color: #a0785a !important;
-}
-
-.rating span {
-    color: #5c4b42;
-    margin-left: 12px;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px;
-}
-
-.tags span {
-    background-color: #f1e6dc;
-    color: #6b4a3a;
-
-    padding: 5px 9px;
-
-    border-radius: 14px;
-
-    font-size: 11px;
+    font-size:12px;
 }
