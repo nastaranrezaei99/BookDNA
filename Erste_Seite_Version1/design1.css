@@ -1,0 +1,76 @@
+/* Alle Elemente der Webseite
+
+* { box-sizing: border-box; } */
+
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+
+body {
+    background-image: url("./bookdnaBack.png");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.Back {
+    width: min(1400px, 90vw);
+    /*viewport Width*/
+    text-align: center;
+    gap: 18px;
+    /*Zeilenabstand*/
+    padding-top: 40px;
+}
+
+#dna-icon {
+    width: 100px;
+    height: 50;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+
+}
+
+#second-Button {
+
+    color: white;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #b9a68d;
+    border-radius: 5px;
+    border: 0;
+    margin-right: 30px;
+
+}
+
+#titel {
+    font-family: 'uni-monospace';
+    color: #a0785a;
+    font-size: 60px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+#titel2 {
+    color: #907467
+}
+
+
+#first-Button {
+
+    color: white;
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    background-color: #b9a68d;
+    border-radius: 5px;
+    border: 0;
+    margin-right: 20px;
+
+
+}

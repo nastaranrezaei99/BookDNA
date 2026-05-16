@@ -2,35 +2,28 @@
 <html>
 
 <head>
+    <!--Sonderzeichen korrekt angezeigt werden-->
     <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+
+
     <title>Book DNA</title>
+    <!--ewsponsives design-->
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='design.css'>
+
+    <link rel='stylesheet' type='text/css' href='design.css'>
     <script src='main.js' defer></script>
 </head>
 
 
 <body>
-    <section class="Back" id="landing">
-
-        <h1 id="titel">Book DNA </h1>
-        <h2 id="titel2">Let us help you find a book that feels just right.</h2>
-        <div><img src="./icon.png" id="dna-icon" alt="DNA icon"></div>
-
-
-        <button type="button" id="first-Button"> Find my Book </button>
-        <button type="button" id="second-Button"> Match my Mood </button>
-
-    </section>
 
 
     <form id="firstque">
 
-        <section class="step1" data-step="q1" id="step1">
+        <section class="step1" id="step1">
             <h2 id="question1"> 1. When you read, you want ... </h2>
             <div>
-                <input type="radio" name="q1" id="q11" value="Escape reality" required>
+                <input type="radio" name="q1" id="q11" value="Escape reality">
                 <label for="q11">Escape reality</label><br>
             </div>
             <div>
@@ -42,8 +35,8 @@
                 <label for="q13">New perspectives</label><br>
             </div>
             <div>
-                <button type="button" data-action="back" id="button11">Back</button>
-                <button type="button" data-action="next" id="button1">Next</button>
+
+                <button type="button" id="button1">Next</button>
 
             </div>
             <!-- <img src="img1.png" id="dosto"> -->
@@ -52,7 +45,7 @@
     </form>
 
     <form id="secque">
-        <section class="step2" data-step="q2" id="step2">
+        <section class="step2" id="step2">
             <h2 id="question2"> 2. You enjoy books that are ... </h2>
 
             <div>
@@ -70,15 +63,17 @@
 
 
             <div>
-                <button type="button" data-action="back" id="button22">Back</button>
-                <button type="button" data-action="next" id="button2">Next</button>
+                <button type="button" id="button22">Back</button>
+                <button type="button" id="button2">Next</button>
+
+
 
             </div>
         </section>
     </form>
 
     <form id="thirdque">
-        <section class="step3" data-step="q3" id="step3">
+        <section class="step3" id="step3">
             <h2 id="question3"> 3. Complexity feels... </h2>
 
             <div>
@@ -98,8 +93,8 @@
 
 
             <div>
-                <button type="button" data-action="back" id="button32">Back</button>
-                <button type="button" data-action="next" id="button3">Next</button>
+                <button type="button" id="button32">Back</button>
+                <button type="button" id="button3">Next</button>
 
             </div>
         </section>
@@ -107,8 +102,8 @@
 
     <form id="f4que">
 
-        <section class="step4" data-step="q4" id="step4">
-            <h4 id="question4"> 4. After finishing, you want ... </h4>
+        <section class="step4" id="step4">
+            <h2 id="question4"> 4. After finishing, you want ... </h2>
             <div>
                 <input type="radio" name="q4" id="q41" value="Calm mind">
                 <label for="q41">Calm mind</label>
@@ -123,31 +118,34 @@
             </div>
 
             <div>
-                <button type="button" data-action="back" id="button42">Back</button>
-                <button type="button" data-action="next" id="button4">Next</button>
+                <button type="button" id="button42">Back</button>
+                <button type="button" id="button4">Next</button>
 
             </div>
         </section>
 
     </form>
     <form id="f5que">
-        <section class="step5" data-step="q5" id="step5">
-            <h4 id="question5"> 5. A good book should... </h4>
+        <section class="step5" id="step5">
+            <h2 id="question5"> 5. A good book should... </h2>
             <div>
                 <input type="radio" name="q5" id="q51" value="Transport me">
                 <label for="q51">Transport me</label>
             </div>
-            <div></div>
-            <input type="radio" name="q5" id="q52" value="Reveal me">
-            <label for="q52">Reveal me</label>
+
+            <div>
+                <input type="radio" name="q5" id="q52" value="Reveal me">
+                <label for="q52">Reveal me</label>
             </div>
+
             <div>
                 <input type="radio" name="q5" id="q53" value="Challenge me">
                 <label for="q53">Challenge me</label>
             </div>
             <div>
-                <button type="button" data-action="back" id="button52">Back</button>
-                <button type="button" data-action="next" id="button5">Find my Book</button>
+                <button type="button" id="button52">Back</button>
+                <button type="button" id="button5">Find my Book</button>
+                <!--(brauchen wir hier submit??)-->
 
             </div>
         </section>
