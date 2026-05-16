@@ -1,0 +1,433 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  background-image: url("./bookdnaBack.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  color: #33251f;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 70px;
+  background-color: rgba(120, 95, 75, 0.55);
+  backdrop-filter: blur(6px);
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 8%;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+
+  color: #f5b6a1;
+}
+
+.dna-circle {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 8px;
+
+  font-size: 18px;
+}
+
+.navbar nav a,
+.nav-actions a {
+  color: white;
+  text-decoration: none;
+
+  margin-left: 22px;
+
+  font-size: 14px;
+
+  transition: 0.3s;
+}
+
+.navbar nav a:hover,
+.nav-actions a:hover {
+  color: #f5b6a1;
+}
+
+.btn-small {
+  background-color: #b9a68d;
+
+  padding: 8px 16px;
+
+  border-radius: 20px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 700px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 70px 8%;
+
+  background-color: transparent;
+}
+
+.hero-text h1 {
+  font-family: Georgia, serif;
+  font-size: 76px;
+  line-height: 1.1;
+  margin: 20px 0;
+  font-weight: normal;
+  color: #f5eee6;
+  background-color: transparent;
+}
+
+.hero-text span {
+  color: #f1d3c4;
+  font-style: italic;
+  background-color: transparent;
+}
+
+.label {
+  color: #f5eee6;
+  letter-spacing: 2px;
+  font-size: 12px;
+  background-color: transparent;
+}
+
+.description {
+  max-width: 430px;
+
+  color: #5c4b42;
+
+  line-height: 1.6;
+
+  font-size: 18px;
+}
+
+.hero-buttons {
+  margin-top: 28px;
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 8px;
+  margin-right: 12px;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: rgba(120, 95, 75, 0.75);
+  color: white;
+  border: none;
+}
+
+.btn-secondary {
+  background-color: rgba(120, 95, 75, 0.45);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+.quote-card {
+  width: 360px;
+  min-height: 430px;
+
+  background-color: rgba(120, 95, 75, 0.55);
+  backdrop-filter: blur(6px);
+
+  border-radius: 20px;
+  padding: 45px;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.25);
+}
+
+.circle-img {
+  width: 90px;
+  height: 90px;
+
+  border-radius: 50%;
+
+  background: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 32px;
+
+  margin-bottom: 55px;
+}
+
+.quote {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  line-height: 1.6;
+  color: #f5eee6;
+  background-color: transparent;
+}
+
+.author {
+  margin-top: 50px;
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #f5d8c8;
+  background-color: transparent;
+}
+
+/* RECOMMENDATIONS */
+
+.recommendations {
+  padding: 90px 8%;
+
+  background-color: transparent;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-family: Georgia, serif;
+
+  font-size: 42px;
+
+  font-weight: normal;
+
+  margin: 0;
+
+  color: #2d1f18;
+}
+
+.section-header h2 span {
+  color: #a0785a;
+  font-style: italic;
+}
+
+.section-text {
+  color: #5c4b42;
+  line-height: 1.6;
+}
+
+.view-all {
+  color: #a0785a;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* BOOK GRID */
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 28px;
+}
+
+.book-card {
+  background-color: rgba(255, 250, 244, 0.85);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  box-shadow: 0 8px 22px rgba(0,0,0,0.08);
+
+  backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(185, 166, 141, 0.25);
+
+  transition: 0.3s;
+}
+
+
+.book-cover {
+  height: 250px;
+
+  background-size: cover;
+  background-position: center;
+}
+
+.cover-one {
+  background: linear-gradient(135deg, #5f7fa0, #d9b38c);
+}
+
+.cover-two {
+  background: linear-gradient(135deg, #3d2d2a, #c77c3b);
+}
+
+.cover-three {
+  background: linear-gradient(135deg, #e7c8c8, #f5ece7);
+}
+
+.cover-four {
+  background: linear-gradient(135deg, #2d2019, #8b765e);
+}
+
+.save-icon {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  background-color: white;
+  color: #4a2f24;
+
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  background-color: white;
+  color: #a0785a;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+}
+
+.book-info {
+  padding: 18px;
+}
+
+.book-info h3 {
+  font-family: Georgia, serif;
+
+  font-size: 18px;
+
+  margin: 0 0 6px;
+
+  color: #2d1f18;
+}
+
+.book-info p {
+  margin: 0 0 10px;
+
+  color: #5c4b42;
+
+  font-size: 14px;
+}
+
+.rating {
+  color: #a0785a !important;
+}
+
+.rating span {
+  color: #5c4b42;
+  margin-left: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.tags span {
+  background-color: #f1e6dc;
+  color: #6b4a3a;
+
+  padding: 5px 9px;
+
+  border-radius: 14px;
+
+  font-size: 11px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1100px) {
+
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .navbar {
+    flex-direction: column;
+
+    height: auto;
+
+    padding: 15px;
+  }
+
+  .navbar nav {
+    margin: 10px 0;
+  }
+
+  .hero {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .hero-text h1 {
+    font-size: 50px;
+  }
+
+  .quote-card {
+    width: 100%;
+    margin-top: 40px;
+  }
+
+}
+
+@media (max-width: 650px) {
+
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
