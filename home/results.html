@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Results | BookDNA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <a href="index.html" class="logo">
+  <span class="dna-circle"></span>
+  BookDNA
+</a>
+
+  <nav>
+    <a href="index.html#recommended">Discover</a>
+    <a href="results.html">Search</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="index.html#celebrity">Celebrity Picks</a>
+    <a href="index.html#about">About</a>
+  </nav>
+
+  <div class="nav-actions">
+    <a href="#">Sign In</a>
+    <a href="quiz.html" class="btn-small">Get Started</a>
+  </div>
+</header>
+
+<section class="search-page">
+
+  <h1 id="resultsTitle">Search Books</h1>
+
+  <div class="modern-search">
+    <input id="resultSearchInput" type="text" placeholder="Search for another book...">
+    <button id="resultSearchButton" type="button">Search</button>
+  </div>
+
+  <div id="searchResults" class="book-grid"></div>
+
+</section>
+
+<script src="results.js"></script>
+
+</body>
+</html>

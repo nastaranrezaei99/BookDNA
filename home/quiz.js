@@ -1,3 +1,5 @@
+//Quiz
+
 const form1 = document.getElementById("firstque");
 const button1 = document.getElementById("button1");
 const form2 = document.getElementById("secque");

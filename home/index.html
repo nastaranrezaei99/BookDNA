@@ -10,14 +10,14 @@
 <body>
 
 <header class="navbar">
-  <div class="logo">
-    <span class="dna-circle"></span>
-    BookDNA
-  </div>
+  <a href="index.html" class="logo">
+  <span class="dna-circle"></span>
+  BookDNA
+</a>
 
   <nav>
     <a href="#recommended">Discover</a>
-    <a href="#search">Search</a>
+    <a href="#" id="openSearch">Search</a>
     <a href="quiz.html">Quiz</a>
     <a href="#celebrity">Celebrity Picks</a>
     <a href="#about">About</a>
@@ -28,6 +28,13 @@
     <a href="quiz.html" class="btn-small">Get Started</a>
   </div>
 </header>
+
+<div id="searchPopup" class="search-popup">
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="Search for a book...">
+    <button id="searchButton" type="button">Search</button>
+  </div>
+</div>
 
 <section class="hero">
   <div class="hero-text">
@@ -74,8 +81,8 @@
       <div class="book-info">
         <h3>The Fall</h3>
         <p>Albert Camus</p>
-        <p class="rating">★★★★★ 4.8 <span>2.5K ratings</span></p>
-        <p class="reviews">1234 reviews</p>
+        <p class="rating">★★★★★ 4.8 <span></span></p>
+        <p class="reviews">3 reviews</p>
 
         <div class="tags">
           <span>Existential</span>
@@ -93,8 +100,8 @@
       <div class="book-info">
         <h3>The Metamorphosis</h3>
         <p>Franz Kafka</p>
-        <p class="rating">★★★★★ 4.9 <span>3.2K ratings</span></p>
-        <p class="reviews">1876 reviews</p>
+        <p class="rating">★★★★★ 4.9 <span></span></p>
+        <p class="reviews">3 reviews</p>
 
         <div class="tags">
           <span>Absurd</span>
@@ -112,8 +119,8 @@
       <div class="book-info">
         <h3>White Nights</h3>
         <p>Fyodor Dostoevsky</p>
-        <p class="rating">★★★★★ 4.7 <span>4.1K ratings</span></p>
-        <p class="reviews">2134 reviews</p>
+        <p class="rating">★★★★★ 4.7 <span></span></p>
+        <p class="reviews">3 reviews</p>
 
         <div class="tags">
           <span>Romance</span>
@@ -131,8 +138,8 @@
       <div class="book-info">
         <h3>The Count of Monte Cristo</h3>
         <p>Alexandre Dumas</p>
-        <p class="rating">★★★★★ 4.9 <span>5.3K ratings</span></p>
-        <p class="reviews">3562 reviews</p>
+        <p class="rating">★★★★★ 4.9 <span></span></p>
+        <p class="reviews">3 reviews</p>
 
         <div class="tags">
           <span>Adventure</span>
@@ -144,6 +151,8 @@
 
   </div>
 </section>
+
+<script src="main.js"></script>
 
 </body>
 </html>
