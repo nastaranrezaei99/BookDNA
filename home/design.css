@@ -17,8 +17,10 @@ body {
     width: 650px;
     height: 400px;
     background-color: rgba(70, 46, 19, 0.555);
+    /*weicher */
     border-radius: 20px;
     box-shadow: 0 12px 30px black;
+    /*schattenwirkung */
     text-align: center;
 }
 
@@ -40,10 +42,9 @@ body {
 
 #button1 {
     margin-top: 20px;
-    margin-right: 20px;
-    padding: 6px 14px;
     border-radius: 6px;
     border: 0;
+    /*ohne Rahmen*/
     cursor: pointer;
     background-color: #79645a;
     box-shadow: 0 10px 20px black;
