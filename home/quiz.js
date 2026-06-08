@@ -57,3 +57,9 @@ back4.addEventListener("click", () => {
     form5.style.display = "none";
     form4.style.display = "block";
 });
+
+let nummer = {
+    classic:0
+    ,poetry : 0
+    ,history : 0
+};
