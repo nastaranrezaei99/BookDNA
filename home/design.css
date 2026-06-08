@@ -17,10 +17,10 @@ body {
     width: 650px;
     height: 400px;
     background-color: rgba(70, 46, 19, 0.555);
-    /*weicher */
+
     border-radius: 20px;
     box-shadow: 0 12px 30px black;
-    /*schattenwirkung */
+    /*links - unten - weicher*/
     text-align: center;
 }
 
@@ -37,8 +37,11 @@ body {
     font-weight: 300;
     text-align: left;
     display: inline-block;
-    width: 220px;
+    width: 420px;
+
 }
+
+
 
 #button1 {
     margin-top: 20px;
@@ -81,7 +84,7 @@ body {
     font-weight: 300;
     text-align: left;
     display: inline-block;
-    width: 220px;
+    width: 420px;
 }
 
 #button2 {
@@ -140,7 +143,7 @@ body {
     font-weight: 300;
     text-align: left;
     display: inline-block;
-    width: 220px;
+    width: 420px;
 }
 
 #button3 {
@@ -199,7 +202,7 @@ body {
     font-weight: 300;
     text-align: left;
     display: inline-block;
-    width: 220px;
+    width: 420px;
 }
 
 #button4 {
@@ -258,7 +261,7 @@ body {
     font-weight: 300;
     text-align: left;
     display: inline-block;
-    width: 220px;
+    width: 420px;
 }
 
 #button5 {
