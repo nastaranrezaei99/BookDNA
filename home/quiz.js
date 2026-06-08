@@ -14,11 +14,26 @@ const back2 = document.getElementById("button32");
 const back3 = document.getElementById("button42");
 const back4 = document.getElementById("button52");
 
+const button5 = document.getElementById("button5");
+
+
+
 
 
 let nummer = {
     classic: 0, poetry: 0, history: 0
 };
+function getResult() {
+    if (nummer.classic >= nummer.poetry && nummer.classic >= nummer.history) {
+        return "classic";
+    }
+    else if (nummer.poetry >= nummer.classic && nummer.poetry >= nummer.history) {
+        return "poetry";
+    }
+    else {
+        return "history";
+    }
+}
 
 
 
@@ -146,6 +161,31 @@ button4.addEventListener("click", () => {
     form5.style.display = "block";
 });
 
+button5.addEventListener("click", () => {
+    const answer5 = document.querySelector('input[name ="q5"]:checked');
+    if (answer5 == null) {
+        alert("Please choose an answer!");
+        return; //break
+
+    }
+
+    else if (answer5.value == "classic") {
+        nummer["classic"]++;
+    }
+    else if (answer5.value == "poetry") {
+        nummer["poetry"]++;
+    }
+    else if (answer5.value == "history") {
+        nummer["history"]++;
+    }
+    console.log(nummer);  //testen
+
+
+    form5.style.display = "none";
+    const result = getResult();
+    alert("result: " + result);
+});
+
 back4.addEventListener("click", () => {
 
 
@@ -153,6 +193,8 @@ back4.addEventListener("click", () => {
     form5.style.display = "none";
     form4.style.display = "block";
 });
+
+
 
 
 
