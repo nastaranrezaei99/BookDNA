@@ -29,3 +29,9 @@ function goToResults(){
 
     window.location.href = "results.html?q=" + encodeURIComponent(text);
 }
+
+//Categories
+
+function openGenre(category){
+    window.location.href = "./category/category.html?category=" + encodeURIComponent(category);
+}
