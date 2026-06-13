@@ -18,6 +18,12 @@ const button5 = document.getElementById("button5");
 
 
 
+const resultBox = document.getElementById("result");
+const resultTitle = document.getElementById("resultTitle");
+const books = document.getElementById("books");
+
+
+
 
 
 let nummer = {
@@ -183,8 +189,29 @@ button5.addEventListener("click", () => {
 
     form5.style.display = "none";
     const result = getResult();
+
+    resultBox.style.display = "block";
+    resultTitle.innerText = "Your result is: " + result;
+
+    fetch("/books/" + result)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            books.innerHTML = "";
+
+            data.forEach(function (book) {
+                books.innerHTML +=
+                    "<img src='../images/" + book.img + "' width='120'>" +
+                    "<h3>" + book.name + "</h3>" +
+                    "<p>" + book.author + "</p>" +
+                    "<p>" + book.beschreibung + "</p>";
+            });
+        });
     alert("result: " + result);
 });
+
+
 
 back4.addEventListener("click", () => {
 
