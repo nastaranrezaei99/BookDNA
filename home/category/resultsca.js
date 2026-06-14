@@ -19,8 +19,8 @@ fetch("http://localhost:3000/books/" + category)
             results.innerHTML +=
                 '<div class="book-card">' +
 
-                '<div class="book-cover" style="background-image:url(../fotos/' + book.img + ')"></div>' +
-                //'<img src="/images/' + book.img + '" width="120">'
+
+                '<img src="/images/' + book.img + '" width="120">' +
 
                 '<div class="book-info">' +
                 '<h3>' + book.name + '</h3>' +
