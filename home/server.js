@@ -24,6 +24,14 @@ app.get("/books/:category", function (req, res) {
     );
 });
 
+
+app.get("/search", function(req, res){
+    const text = req.query.q;db.all("SELECT * FROM books WHERE name LIKE ?",["%" + text + "%"],function(err, rows){
+            res.json(rows);
+        }
+    );
+
+});
 app.listen(3000, function () {
     console.log("Server läuft auf Port 3000");
 });
