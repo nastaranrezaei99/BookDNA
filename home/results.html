@@ -5,20 +5,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Results | BookDNA</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stylehome.css">
 </head>
 
 <body>
 
 <header class="navbar">
-  <a href="index.html" class="logo">
+  <a href="homepage.html" class="logo">
   <span class="dna-circle"></span>
   BookDNA
 </a>
 
   <nav>
-    <a href="index.html#recommended">Discover</a>
-    <a href="results.html">Search</a>
+    <a href="homepage.html#genres">Genres</a>
+    <a href="#" id="openSearch">Search</a>
     <a href="quiz.html">Quiz</a>
     <a href="index.html#celebrity">Celebrity Picks</a>
     <a href="index.html#about">About</a>
@@ -28,21 +28,23 @@
     <a href="#">Sign In</a>
     <a href="quiz.html" class="btn-small">Get Started</a>
   </div>
+  <div id="searchPopup" class="search-popup">
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="Search for a book...">
+    <button id="searchButton" type="button">Search</button>
+  </div>
+  </div>
 </header>
 
 <section class="search-page">
 
-  <h1 id="resultsTitle">Search Books</h1>
-
-  <div class="modern-search">
-    <input id="resultSearchInput" type="text" placeholder="Search for another book...">
-    <button id="resultSearchButton" type="button">Search</button>
-  </div>
+  <h1 id="resultsTitle">Results</h1>
 
   <div id="searchResults" class="book-grid"></div>
 
 </section>
 
+<script src="main.js"></script>
 <script src="results.js"></script>
 
 </body>
