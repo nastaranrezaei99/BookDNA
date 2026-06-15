@@ -9,7 +9,6 @@ const db = new sqlite3.Database("./database.db");
 
 app.get("/books/:category", function (req, res) {
     const category = req.params.category;
-
     db.all(
         "SELECT * FROM books WHERE LOWER(kategorie) = LOWER(?)",
         [category],
