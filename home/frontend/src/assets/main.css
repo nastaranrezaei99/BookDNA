@@ -1,0 +1,422 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+    min-height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #33251f;
+
+    background-image: url("/images/bookdnaBack.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background-color: #614c32;
+    padding: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #f5b6a1;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+}
+
+.dna-circle {
+    width: 35px;
+    height: 45px;
+    margin-right: 5px;
+
+    background-image: url("/images/icon.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.nav-link {
+    margin-left: 15px;
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    color: white;
+    font: inherit;
+
+    cursor: pointer;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-small {
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #c07854;
+}
+
+/* HERO */
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 80px;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-size: 70px;
+    color: #88571a;
+}
+
+.hero-text span {
+    color: #c07854;
+}
+
+.description {
+    width: 400px;
+    max-width: 100%;
+    color: #5c4b42;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.btn-primary {
+    background-color: #694f44;
+    color: white;
+
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.btn-secondary {
+    background-color: #b9a68d;
+    color: white;
+
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+/* KAFKA CARD */
+
+.quote-card {
+    width: 350px;
+    height: 430px;
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background-color: #907467;
+    background-image: url("/images/kafka.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.quote {
+    color: white;
+    font-size: 22px;
+}
+
+.author {
+    color: #f5d8c8;
+    margin-top: 40px;
+}
+
+/* GENRES */
+
+.genres {
+    padding: 80px;
+}
+
+.genres h2 {
+    color: #88571a;
+    font-size: 40px;
+}
+
+.genre-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.genre-card {
+    background-color: #fffaf4;
+    border: 1px solid #d8c6b8;
+    border-radius: 20px;
+    padding: 35px;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.genre-card:hover {
+    transform: translateY(-5px);
+}
+
+.genre-card h3 {
+    color: #88571a;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.genre-card p {
+    color: #5c4b42;
+    line-height: 1.5;
+}
+
+/* SEARCH POPUP */
+
+.search-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 100px;
+
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: min(520px, 90%);
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 14px 16px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #f5f1ec;
+
+    font-size: 15px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 14px 18px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: #6d4c41;
+    color: white;
+
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search-box button:hover {
+    transform: scale(1.05);
+    background: #5d4037;
+}
+
+/* RESULTS AND CATEGORY PAGE */
+
+.search-page {
+    padding: 50px 80px;
+}
+
+.search-page h1 {
+    margin-top: 0;
+    margin-bottom: 35px;
+    color: #88571a;
+}
+
+.book-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.book-card {
+    width: 220px;
+    padding: 15px;
+
+    background-color: rgba(255, 250, 244, 0.9);
+    border-radius: 15px;
+}
+
+.book-card img {
+    width: 140px;
+    height: 210px;
+
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.book-info h3 {
+    font-size: 18px;
+    color: #88571a;
+}
+
+.book-info p {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* QUIZ */
+
+.quiz-page {
+    display: flex;
+    justify-content: center;
+
+    padding: 80px 20px;
+}
+
+.quiz-card,
+.quiz-result {
+    width: min(650px, 92%);
+    padding: 40px;
+
+    background-color: rgba(70, 46, 19, 0.88);
+    color: #ebe8e3;
+
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.quiz-card h2,
+.quiz-result h2 {
+    margin-bottom: 30px;
+    color: #f5d8c8;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 16px 0;
+    font-size: 18px;
+}
+
+.quiz-option input,
+.quiz-option label {
+    cursor: pointer;
+}
+
+.quiz-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.quiz-actions button,
+.quiz-result button {
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #79645a;
+    color: white;
+
+    cursor: pointer;
+}
+
+.quiz-actions button:hover,
+.quiz-result button:hover {
+    background-color: #614c32;
+}
+
+.error-message {
+    color: #ffd2d2;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 48px;
+    }
+
+    .quote-card {
+        width: min(350px, 100%);
+    }
+
+    .genres {
+        padding: 40px 20px;
+    }
+
+    .genre-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-page {
+        padding: 40px 20px;
+    }
+}
