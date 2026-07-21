@@ -6,7 +6,19 @@
         />
 
         <div class="book-info">
-            <h3>{{ book.name }}</h3>
+           <h3>
+    <RouterLink
+        :to="{
+            name: 'book-detail',
+            params: {
+                id: book.id
+            }
+        }"
+        class="book-title-link"
+    >
+        {{ book.name }}
+    </RouterLink>
+</h3>
             <p>{{ book.author }}</p>
             <p v-if="book.kategorie">
                 {{ book.kategorie }}

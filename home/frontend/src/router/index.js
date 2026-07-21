@@ -4,6 +4,7 @@ import HomeView from "../views/HomeView.vue";
 import CategoryView from "../views/CategoryView.vue";
 import SearchResultsView from "../views/SearchResultsView.vue";
 import QuizView from "../views/QuizView.vue";
+import BookDetailView from "../views/BookDetailView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -28,6 +29,11 @@ const router = createRouter({
             path: "/quiz",
             name: "quiz",
             component: QuizView
+        },
+        {
+            path: "/book/:id",
+            name: "book-detail",
+            component: BookDetailView
         }
     ]
 });

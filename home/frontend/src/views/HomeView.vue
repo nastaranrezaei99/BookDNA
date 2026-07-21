@@ -19,11 +19,17 @@
                 </p>
 
                 <div class="hero-buttons">
-                    <RouterLink to="/quiz" class="btn-primary">
+                    <RouterLink
+                        to="/quiz"
+                        class="btn-primary"
+                    >
                         Start Quiz →
                     </RouterLink>
 
-                    <a href="#genres" class="btn-secondary">
+                    <a
+                        href="#genres"
+                        class="btn-secondary"
+                    >
                         Discover Genres
                     </a>
                 </div>
@@ -41,63 +47,14 @@
             </div>
         </section>
 
-        <section id="genres" class="genres">
-            <div class="section-header">
-                <div>
-                    <h2>Explore by Genre</h2>
+        <GenreList />
 
-                    <p class="section-text">
-                        Choose a genre and discover books from
-                        our collection
-                    </p>
-                </div>
-            </div>
-
-            <div class="genre-grid">
-                <article
-                    v-for="genre in genres"
-                    :key="genre.name"
-                    class="genre-card"
-                    @click="openGenre(genre.name)"
-                >
-                    <h3>{{ genre.name }}</h3>
-                    <p>{{ genre.description }}</p>
-                </article>
-            </div>
-        </section>
+        <CelebrityPicks />
     </main>
 </template>
 
 <script setup>
-import { useRouter } from "vue-router";
 import Navbar from "../components/Navbar.vue";
-
-const router = useRouter();
-
-const genres = [
-    {
-        name: "Classic",
-        description:
-            "Timeless books and important literary works."
-    },
-    {
-        name: "History",
-        description:
-            "Books about historical events, people and cultures."
-    },
-    {
-        name: "Poetry",
-        description:
-            "Poems, emotions and artistic language."
-    }
-];
-
-function openGenre(category) {
-    router.push({
-        name: "category",
-        params: {
-            category
-        }
-    });
-}
+import GenreList from "../components/GenreList.vue";
+import CelebrityPicks from "../components/CelebrityPicks.vue";
 </script>
