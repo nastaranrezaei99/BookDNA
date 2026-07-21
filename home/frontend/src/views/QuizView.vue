@@ -12,6 +12,7 @@
                 {{ currentQuestion.text }}
             </h2>
 
+
             <div
                 v-for="option in currentQuestion.options"
                 :key="option.value"
@@ -58,26 +59,27 @@
         </section>
 
         <section v-else class="quiz-result">
-            <h2>
-                Your result is: {{ result }}
-            </h2>
+    <h2>
+        Your main interest is:
+        {{ result.mainCategory }}
+    </h2>
 
-            <p v-if="loading">
-                Loading recommendations...
-            </p>
+    <p>Classic: {{ result.classicPercent }}%</p>
+    <p>Poetry: {{ result.poetryPercent }}%</p>
+    <p>History: {{ result.historyPercent }}%</p>
 
-            <div v-else class="book-grid">
-                <BookCard
-                    v-for="book in books"
-                    :key="book.id || book.name"
-                    :book="book"
-                />
-            </div>
+    <p v-if="loading">
+        Loading recommendations...
+    </p>
 
-            <button type="button" @click="restartQuiz">
-                Restart Quiz
-            </button>
-        </section>
+    <div v-else class="book-grid">
+        <BookCard
+            v-for="book in books"
+            :key="book.id || book.name"
+            :book="book"
+        />
+    </div>
+</section>
     </main>
 </template>
 
@@ -182,11 +184,13 @@ const questions = [
     }
 ];
 
+
+
 const currentQuestion = computed(() => {
     return questions[currentStep.value];
 });
 
-const result = computed(() => {
+/*const result = computed(() => {
     const scores = {
         classic: 0,
         poetry: 0,
@@ -204,7 +208,66 @@ const result = computed(() => {
             ? category
             : best;
     }, "classic");
+});*/
+
+
+
+
+const result = computed(() => {
+    let classic = 0;
+    let poetry = 0;
+    let history = 0;
+
+    for (const answer of answers.value) {
+
+        if (answer === "classic") {
+            classic = classic + 1;
+            poetry = poetry + 0.3;
+            history = history + 0.2;
+        }
+
+        if (answer === "poetry") {
+            classic = classic + 0.4;
+            poetry = poetry + 1;
+            history = history + 0.1;
+        }
+
+        if (answer === "history") {
+            classic = classic + 0.4;
+            poetry = poetry + 0.1;
+            history = history + 1;
+        }
+    }
+
+    let mainCategory = "classic";
+
+    if (poetry > classic && poetry > history) {
+        mainCategory = "poetry";
+    }
+
+    if (history > classic && history > poetry) {
+        mainCategory = "history";
+    }
+
+    const total = classic + poetry + history;
+
+    return {
+        mainCategory: mainCategory,
+
+        classicPercent:
+            Math.round((classic / total) * 100),
+
+        poetryPercent:
+            Math.round((poetry / total) * 100),
+
+        historyPercent:
+            Math.round((history / total) * 100)
+    };
 });
+
+
+
+
 
 async function nextQuestion() {
     if (!answers.value[currentStep.value]) {
@@ -236,7 +299,7 @@ async function loadRecommendations() {
 
     try {
         const response = await fetch(
-            `/api/books/${encodeURIComponent(result.value)}`
+            `/api/books/${encodeURIComponent(result.value.mainCategory)}`
         );
 
         books.value = await response.json();
@@ -247,11 +310,5 @@ async function loadRecommendations() {
     }
 }
 
-function restartQuiz() {
-    currentStep.value = 0;
-    answers.value = [];
-    finished.value = false;
-    books.value = [];
-    validationError.value = false;
-}
+
 </script>
