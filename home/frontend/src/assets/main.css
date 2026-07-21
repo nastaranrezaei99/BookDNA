@@ -366,9 +366,6 @@ body {
     transition: transform 0.2s;
 }
 
-.celebrity-card:hover {
-    transform: translateY(-5px);
-}
 
 .celebrity-image {
     display: block;
@@ -404,9 +401,6 @@ body {
     text-decoration: none;
 }
 
-.celebrity-book-link:hover {
-    text-decoration: underline;
-}
 
 .book-author {
     margin: 8px 0 0;
