@@ -12,9 +12,7 @@
                 Search
             </button>
 
-            <button type="button" @click="closePopup">
-                Close
-            </button>
+            
         </div>
     </div>
 </template>
