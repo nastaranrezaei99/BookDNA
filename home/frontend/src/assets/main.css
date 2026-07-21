@@ -118,6 +118,8 @@ body {
 }
 
 .btn-primary {
+    display: inline-block;
+
     background-color: #694f44;
     color: white;
 
@@ -127,6 +129,8 @@ body {
 }
 
 .btn-secondary {
+    display: inline-block;
+
     background-color: #b9a68d;
     color: white;
 
@@ -185,7 +189,7 @@ body {
     padding: 35px;
 
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
 .genre-card:hover {
@@ -201,6 +205,15 @@ body {
 .genre-card p {
     color: #5c4b42;
     line-height: 1.5;
+}
+
+.genre-book-count {
+    display: inline-block;
+    margin-top: 12px;
+
+    color: #694f44;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 /* SEARCH POPUP */
@@ -311,6 +324,161 @@ body {
     line-height: 1.4;
 }
 
+.book-title-link {
+    color: #88571a;
+    text-decoration: none;
+}
+
+.book-title-link:hover {
+    text-decoration: underline;
+}
+
+/* CELEBRITY PICKS */
+
+.celebrity-section {
+    padding: 80px;
+}
+
+.celebrity-section h2 {
+    margin: 0 0 10px;
+
+    color: #88571a;
+    font-size: 40px;
+}
+
+.celebrity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+.celebrity-card {
+    overflow: hidden;
+
+    background-color: rgba(255, 250, 244, 0.95);
+
+    border: 1px solid #d8c6b8;
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(51, 37, 31, 0.12);
+    transition: transform 0.2s;
+}
+
+.celebrity-card:hover {
+    transform: translateY(-5px);
+}
+
+.celebrity-image {
+    display: block;
+
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.celebrity-book-info {
+    padding: 22px;
+}
+
+.celebrity-name {
+    margin: 0 0 12px;
+
+    color: #694f44;
+
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.celebrity-book-link {
+    display: inline-block;
+
+    color: #88571a;
+
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.celebrity-book-link:hover {
+    text-decoration: underline;
+}
+
+.book-author {
+    margin: 8px 0 0;
+
+    color: #5c4b42;
+    font-weight: bold;
+}
+
+/* BOOK DETAIL PAGE */
+
+.book-detail-page {
+    padding: 70px 80px;
+}
+
+.book-detail {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 50px;
+
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+
+    background-color: rgba(255, 250, 244, 0.95);
+
+    border: 1px solid #d8c6b8;
+    border-radius: 20px;
+}
+
+.book-detail-image img {
+    display: block;
+
+    width: 100%;
+    max-height: 480px;
+
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.book-detail-info h1 {
+    margin: 18px 0 10px;
+
+    color: #88571a;
+    font-size: 42px;
+}
+
+.book-detail-author {
+    color: #694f44;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.book-detail-description {
+    margin-bottom: 35px;
+
+    color: #5c4b42;
+    line-height: 1.7;
+}
+
+.book-category {
+    display: inline-block;
+
+    padding: 5px 10px;
+
+    background-color: #ead7cb;
+    color: #694f44;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
 /* QUIZ */
 
 .quiz-page {
@@ -379,7 +547,7 @@ body {
 }
 
 .error-message {
-    color: #ffd2d2;
+    color: #b00020;
 }
 
 /* RESPONSIVE */
@@ -408,15 +576,35 @@ body {
         width: min(350px, 100%);
     }
 
-    .genres {
+    .genres,
+    .celebrity-section {
         padding: 40px 20px;
     }
 
-    .genre-grid {
+    .genre-grid,
+    .celebrity-grid {
         grid-template-columns: 1fr;
     }
 
     .search-page {
         padding: 40px 20px;
+    }
+
+    .book-detail-page {
+        padding: 40px 20px;
+    }
+
+    .book-detail {
+        grid-template-columns: 1fr;
+        padding: 25px;
+    }
+
+    .book-detail-image {
+        max-width: 280px;
+        margin: 0 auto;
+    }
+
+    .book-detail-info h1 {
+        font-size: 32px;
     }
 }
