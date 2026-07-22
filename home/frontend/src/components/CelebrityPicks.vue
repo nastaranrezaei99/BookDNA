@@ -1,3 +1,33 @@
+<script setup>
+import { onMounted, ref } from "vue";
+
+const celebrityPicks = ref([]);
+const loading = ref(false);
+const error = ref("");
+
+async function loadCelebrityPicks() {
+    loading.value = true;
+    error.value = "";
+
+    try {
+        const response = await fetch("/api/celebrity-picks");
+
+        if (!response.ok) {
+            throw new Error(
+                "Celebrity picks could not be loaded."
+            );
+        }
+
+        celebrityPicks.value = await response.json();
+    } catch (err) {
+        error.value = err.message;
+    } finally {
+        loading.value = false;
+    }
+}
+
+onMounted(loadCelebrityPicks);
+</script>
 <template>
     <section id="celebrity" class="celebrity-section">
         <div class="section-header">
@@ -61,34 +91,3 @@
         </div>
     </section>
 </template>
-
-<script setup>
-import { onMounted, ref } from "vue";
-
-const celebrityPicks = ref([]);
-const loading = ref(false);
-const error = ref("");
-
-async function loadCelebrityPicks() {
-    loading.value = true;
-    error.value = "";
-
-    try {
-        const response = await fetch("/api/celebrity-picks");
-
-        if (!response.ok) {
-            throw new Error(
-                "Celebrity picks could not be loaded."
-            );
-        }
-
-        celebrityPicks.value = await response.json();
-    } catch (err) {
-        error.value = err.message;
-    } finally {
-        loading.value = false;
-    }
-}
-
-onMounted(loadCelebrityPicks);
-</script>

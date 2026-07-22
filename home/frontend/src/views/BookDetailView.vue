@@ -1,3 +1,44 @@
+<script setup>
+import { onMounted, ref, watch } from "vue";
+import { useRoute } from "vue-router";
+
+import Navbar from "../components/Navbar.vue";
+
+const route = useRoute();
+
+const book = ref(null);
+const loading = ref(false);
+const error = ref("");
+
+async function loadBook() {
+    loading.value = true;
+    error.value = "";
+
+    try {
+        const response = await fetch(
+            `/api/books/id/${encodeURIComponent(route.params.id)}`
+        );
+
+        if (!response.ok) {
+            throw new Error("Book could not be loaded.");
+        }
+
+        book.value = await response.json();
+    } catch (err) {
+        error.value = err.message;
+    } finally {
+        loading.value = false;
+    }
+}
+
+watch(
+    () => route.params.id,
+    loadBook,
+    {
+        immediate: true
+    }
+);
+</script>
 <template>
     <Navbar />
 
@@ -49,44 +90,3 @@
     </main>
 </template>
 
-<script setup>
-import { onMounted, ref, watch } from "vue";
-import { useRoute } from "vue-router";
-
-import Navbar from "../components/Navbar.vue";
-
-const route = useRoute();
-
-const book = ref(null);
-const loading = ref(false);
-const error = ref("");
-
-async function loadBook() {
-    loading.value = true;
-    error.value = "";
-
-    try {
-        const response = await fetch(
-            `/api/books/id/${encodeURIComponent(route.params.id)}`
-        );
-
-        if (!response.ok) {
-            throw new Error("Book could not be loaded.");
-        }
-
-        book.value = await response.json();
-    } catch (err) {
-        error.value = err.message;
-    } finally {
-        loading.value = false;
-    }
-}
-
-watch(
-    () => route.params.id,
-    loadBook,
-    {
-        immediate: true
-    }
-);
-</script>

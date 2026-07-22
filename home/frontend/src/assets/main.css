@@ -192,10 +192,6 @@ body {
     transition: transform 0.3s;
 }
 
-.genre-card:hover {
-    transform: translateY(-5px);
-}
-
 .genre-card h3 {
     color: #88571a;
     font-size: 30px;

@@ -1,3 +1,8 @@
+<script setup>
+import Navbar from "../components/Navbar.vue";
+import GenreList from "../components/GenreList.vue";
+import CelebrityPicks from "../components/CelebrityPicks.vue";
+</script>
 <template>
     <Navbar />
 
@@ -52,9 +57,3 @@
         <CelebrityPicks />
     </main>
 </template>
-
-<script setup>
-import Navbar from "../components/Navbar.vue";
-import GenreList from "../components/GenreList.vue";
-import CelebrityPicks from "../components/CelebrityPicks.vue";
-</script>
