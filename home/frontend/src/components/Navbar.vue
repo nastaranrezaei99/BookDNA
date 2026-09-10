@@ -6,27 +6,27 @@
         </RouterLink>
 
         <nav>
-            <RouterLink to="/#genres">Genres</RouterLink>
+            <RouterLink to="/#genres">Kategorien</RouterLink>
 
             <button
                 class="nav-link"
                 type="button"
                 @click="showSearch = true"
             >
-                Search
+                Suche
             </button>
 
             <RouterLink to="/quiz">Quiz</RouterLink>
 
-            <a href="#celebrity">Celebrity Picks</a>
-            <a href="#about">About</a>
+            <a href="#celebrity">Promi-Empfehlungen</a>
+            <a href="#about">Über uns</a>
         </nav>
 
         <div class="nav-actions">
-            <a href="#">Sign In</a>
+            <a href="#">Anmelden</a>
 
             <RouterLink to="/quiz" class="btn-small">
-                Get Started
+                Los gehts
             </RouterLink>
         </div>
     </header>

@@ -2,10 +2,10 @@
     <Navbar />
 
     <main class="search-page">
-        <h1>{{ category }} Books</h1>
+        <h1>{{ category }} Bücher</h1>
 
         <p v-if="loading">
-            Loading books...
+            Bücher werden geladen...
         </p>
 
         <p v-else-if="error">
@@ -13,7 +13,7 @@
         </p>
 
         <p v-else-if="books.length === 0">
-            No books found.
+            Keine Bücher gefunden.
         </p>
 
         <div v-else class="book-grid">
@@ -53,7 +53,7 @@ async function loadBooks() {
         );
 
         if (!response.ok) {
-            throw new Error("Books could not be loaded.");
+            throw new Error("Die Bücher konnten nicht geladen werden.");
         }
 
         books.value = await response.json();

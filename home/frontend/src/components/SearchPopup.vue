@@ -4,12 +4,12 @@
             <input
                 v-model="searchText"
                 type="text"
-                placeholder="Search for a book..."
+                placeholder="Nach einem Buch suchen..."
                 @keyup.enter="search"
             />
 
             <button type="button" @click="search">
-                Search
+                Suchen
             </button>
 
             

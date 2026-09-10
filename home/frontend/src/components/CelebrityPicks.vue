@@ -14,7 +14,7 @@ async function loadCelebrityPicks() {
 
         if (!response.ok) {
             throw new Error(
-                "Celebrity picks could not be loaded."
+                "Die Empfehlungen konnten nicht geladen werden."
             );
         }
 
@@ -32,18 +32,18 @@ onMounted(loadCelebrityPicks);
     <section id="celebrity" class="celebrity-section">
         <div class="section-header">
             <p class="label">
-                FAMOUS READERS
+                BERÜHMTE LESER
             </p>
 
-            <h2>Celebrity Picks</h2>
+            <h2>Promi-Empfehlungen</h2>
 
             <p class="section-text">
-                Discover books recommended by well-known personalities.
+                Entdecke Bücher, die von bekannten Persönlichkeiten empfohlen werden.
             </p>
         </div>
 
         <p v-if="loading">
-            Loading celebrity picks...
+            Empfehlungen werden geladen...
         </p>
 
         <p v-else-if="error" class="error-message">
@@ -51,7 +51,7 @@ onMounted(loadCelebrityPicks);
         </p>
 
         <p v-else-if="celebrityPicks.length === 0">
-            No celebrity picks found.
+            Keine Empfehlungen gefunden.
         </p>
 
         <div v-else class="celebrity-grid">
@@ -84,7 +84,7 @@ onMounted(loadCelebrityPicks);
                     </RouterLink>
 
                     <p class="book-author">
-                        by {{ pick.author }}
+                        von {{ pick.author }}
                     </p>
                 </div>
             </article>

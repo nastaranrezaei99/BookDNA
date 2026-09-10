@@ -3,11 +3,11 @@
 
     <main class="search-page">
         <h1>
-            Search results for “{{ query }}”
+            Suchergebnisse für “{{ query }}”
         </h1>
 
         <p v-if="loading">
-            Searching...
+            Suche läuft...
         </p>
 
         <p v-else-if="error">
@@ -15,7 +15,7 @@
         </p>
 
         <p v-else-if="books.length === 0">
-            No books found.
+            Keine Bücher gefunden.
         </p>
 
         <div v-else class="book-grid">
@@ -60,7 +60,7 @@ async function searchBooks() {
         );
 
         if (!response.ok) {
-            throw new Error("Search failed.");
+            throw new Error("Die Suche ist fehlgeschlagen.");
         }
 
         books.value = await response.json();

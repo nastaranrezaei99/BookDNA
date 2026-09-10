@@ -10,17 +10,17 @@ import CelebrityPicks from "../components/CelebrityPicks.vue";
         <section class="hero">
             <div class="hero-text">
                 <p class="label">
-                    PERSONALIZED BOOK DISCOVERY
+                    PERSONALISIERTE BUCHEMPFEHLUNGEN
                 </p>
 
                 <h1>
-                    Find Books,<br />
-                    that fit <span>you</span>
+                    Finde Bücher,<br />
+                    die zu <span>dir</span> passen
                 </h1>
 
                 <p class="description">
-                    Discover literature that matches your personality,
-                    mood and interests.
+                    Entdecke Literatur, die zu deiner Persönlichkeit,
+                    Stimmung und deinen Interessen passt.
                 </p>
 
                 <div class="hero-buttons">
@@ -28,22 +28,22 @@ import CelebrityPicks from "../components/CelebrityPicks.vue";
                         to="/quiz"
                         class="btn-primary"
                     >
-                        Start Quiz →
+                        Quiz starten →
                     </RouterLink>
 
                     <a
                         href="#genres"
                         class="btn-secondary"
                     >
-                        Discover Genres
+                        Kategorien entdecken
                     </a>
                 </div>
             </div>
 
             <div class="quote-card">
                 <p class="quote">
-                    “A book must be the axe for the frozen sea
-                    within us.”
+                    “Ein Buch muss die Axt sein für das gefrorene Meer
+                    in uns.”
                 </p>
 
                 <p class="author">

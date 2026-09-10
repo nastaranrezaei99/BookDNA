@@ -2,17 +2,17 @@
     <section id="genres" class="genres">
         <div class="section-header">
             <div>
-                <h2>Explore by Genre</h2>
+                <h2>Nach Kategorie entdecken</h2>
 
                 <p class="section-text">
-                    Choose a genre and discover books from
-                    our collection.
+                    Wähle eine Kategorie und entdecke Bücher aus
+                    unserer Sammlung.
                 </p>
             </div>
         </div>
 
         <p v-if="loading">
-            Loading genres...
+            Kategorien werden geladen...
         </p>
 
         <p v-else-if="error" class="error-message">
@@ -20,7 +20,7 @@
         </p>
 
         <p v-else-if="genres.length === 0">
-            No genres found.
+            Keine Kategorien gefunden.
         </p>
 
         <div v-else class="genre-grid">
@@ -38,7 +38,7 @@
 
                 <span class="genre-book-count">
                     {{ genre.book_count }}
-                    {{ genre.book_count === 1 ? "book" : "books" }}
+                    {{ genre.book_count === 1 ? "Buch" : "Bücher" }}
                 </span>
             </article>
         </div>
@@ -57,28 +57,28 @@ const error = ref("");
 
 const genreDescriptions = {
     Classic:
-        "Timeless books and important literary works.",
+        "Zeitlose Bücher und bedeutende Werke der Literatur.",
 
     History:
-        "Books about historical events, people and cultures.",
+        "Bücher über historische Ereignisse, Personen und Kulturen.",
 
     Poetry:
-        "Poems, emotions and artistic language.",
+        "Gedichte, Emotionen und künstlerische Sprache.",
 
     "Historical Fiction":
-        "Fictional stories inspired by real historical periods and events.",
+        "Fiktive Geschichten, die von realen historischen Epochen und Ereignissen inspiriert sind.",
 
     "Coming-of-Age":
-        "Stories about growing up, identity and personal development.",
+        "Geschichten über das Erwachsenwerden, Identität und persönliche Entwicklung.",
 
     Nonfiction:
-        "Books based on facts, research and real-world subjects."
+        "Bücher über Fakten, Forschung und reale Themen."
 };
 
 function getDescription(category) {
     return (
         genreDescriptions[category] ||
-        "Discover books from this category."
+        "Entdecke Bücher aus dieser Kategorie."
     );
 }
 
@@ -99,7 +99,7 @@ async function loadGenres() {
         const response = await fetch("/api/categories");
 
         if (!response.ok) {
-            throw new Error("Genres could not be loaded.");
+            throw new Error("Die Kategorien konnten nicht geladen werden.");
         }
 
         genres.value = await response.json();

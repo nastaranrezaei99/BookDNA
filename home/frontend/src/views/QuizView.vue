@@ -4,8 +4,8 @@
     <main class="quiz-page">
         <section v-if="!finished" class="quiz-card">
             <p>
-                Question {{ currentStep + 1 }}
-                of {{ questions.length }}
+                Frage {{ currentStep + 1 }}
+                von {{ questions.length }}
             </p>
 
             <h2>
@@ -33,7 +33,7 @@
             </div>
 
             <p v-if="validationError" class="error-message">
-                Please choose an answer.
+                Bitte wähle eine Antwort aus.
             </p>
 
             <div class="quiz-actions">
@@ -42,7 +42,7 @@
                     type="button"
                     @click="previousQuestion"
                 >
-                    Back
+                    Zurück
                 </button>
 
                 <button
@@ -51,8 +51,8 @@
                 >
                     {{
                         currentStep === questions.length - 1
-                            ? "Find my Book"
-                            : "Next"
+                            ? "Mein Buch finden"
+                            : "Weiter"
                     }}
                 </button>
             </div>
@@ -60,16 +60,16 @@
 
         <section v-else class="quiz-result">
     <h2>
-        Your main interest is:
+        Dein Hauptinteresse ist:
         {{ result.mainCategory }}
     </h2>
 
-    <p>Classic: {{ result.classicPercent }}%</p>
-    <p>Poetry: {{ result.poetryPercent }}%</p>
-    <p>History: {{ result.historyPercent }}%</p>
+    <p>Klassiker: {{ result.classicPercent }}%</p>
+    <p>Lyrik: {{ result.poetryPercent }}%</p>
+    <p>Geschichte: {{ result.historyPercent }}%</p>
 
     <p v-if="loading">
-        Loading recommendations...
+        Empfehlungen werden geladen...
     </p>
 
     <div v-else class="book-grid">
@@ -98,87 +98,87 @@ const loading = ref(false);
 
 const questions = [
     {
-        text: "What kind of book are you looking for?",
+        text: "Welche Art von Buch suchst du?",
         options: [
             {
                 value: "history",
-                label: "A story connected to the past or society"
+                label: "Eine Geschichte über die Vergangenheit oder Gesellschaft"
             },
             {
                 value: "poetry",
-                label: "A text with deep feelings and atmosphere"
+                label: "Ein Text mit tiefen Gefühlen und besonderer Atmosphäre"
             },
             {
                 value: "classic",
-                label: "A well-known and timeless book"
+                label: "Ein bekanntes und zeitloses Buch"
             }
         ]
     },
     {
-        text: "What interests you most while reading?",
+        text: "Was interessiert dich beim Lesen am meisten?",
         options: [
             {
                 value: "classic",
-                label: "Important ideas and human questions"
+                label: "Wichtige Ideen und menschliche Fragen"
             },
             {
                 value: "history",
-                label: "Historical events and real contexts"
+                label: "Historische Ereignisse und reale Zusammenhänge"
             },
             {
                 value: "poetry",
-                label: "Emotions, language and inner thoughts"
+                label: "Emotionen, Sprache und innere Gedanken"
             }
         ]
     },
     {
-        text: "Which reading experience do you prefer?",
+        text: "Welche Art von Leseerlebnis bevorzugst du?",
         options: [
             {
                 value: "classic",
-                label: "Something thoughtful and meaningful"
+                label: "Etwas Nachdenkliches und Bedeutungsvolles"
             },
             {
                 value: "history",
-                label: "Something that shows another time or culture"
+                label: "Etwas über eine andere Zeit oder Kultur"
             },
             {
                 value: "poetry",
-                label: "Something emotional and personal"
+                label: "Etwas Emotionales und Persönliches"
             }
         ]
     },
     {
-        text: "What should a good book give you?",
+        text: "Was sollte dir ein gutes Buch geben?",
         options: [
             {
                 value: "classic",
-                label: "A new way to think about life"
+                label: "Eine neue Sichtweise auf das Leben"
             },
             {
                 value: "history",
-                label: "A better understanding of the past"
+                label: "Ein besseres Verständnis der Vergangenheit"
             },
             {
                 value: "poetry",
-                label: "A strong emotional impression"
+                label: "Einen starken emotionalen Eindruck"
             }
         ]
     },
     {
-        text: "Which style do you like most?",
+        text: "Welchen Stil magst du am liebsten?",
         options: [
             {
                 value: "classic",
-                label: "Deep and literary"
+                label: "Tiefgründig und literarisch"
             },
             {
                 value: "history",
-                label: "Narrative and realistic"
+                label: "Erzählerisch und realistisch"
             },
             {
                 value: "poetry",
-                label: "Expressive and poetic"
+                label: "Ausdrucksstark und poetisch"
             }
         ]
     }
@@ -304,7 +304,7 @@ async function loadRecommendations() {
 
         books.value = await response.json();
     } catch (error) {
-        console.error("Recommendations could not be loaded:", error);
+        console.error("Empfehlungen konnten nicht geladen werden:", error);
     } finally {
         loading.value = false;
     }

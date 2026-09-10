@@ -20,7 +20,7 @@ async function loadBook() {
         );
 
         if (!response.ok) {
-            throw new Error("Book could not be loaded.");
+            throw new Error("Das Buch konnte nicht geladen werden");
         }
 
         book.value = await response.json();
@@ -44,7 +44,7 @@ watch(
 
     <main class="book-detail-page">
         <p v-if="loading">
-            Loading book...
+            Buch wird geladen...
         </p>
 
         <p v-else-if="error" class="error-message">
@@ -67,7 +67,7 @@ watch(
                 <h1>{{ book.name }}</h1>
 
                 <p class="book-detail-author">
-                    by {{ book.author }}
+                    von {{ book.author }}
                 </p>
 
                 <p class="book-detail-description">
@@ -83,7 +83,7 @@ watch(
                     }"
                     class="btn-primary"
                 >
-                    More {{ book.kategorie }} books
+                    Mehr Bücher aus {{ book.kategorie }} 
                 </RouterLink>
             </div>
         </section>
