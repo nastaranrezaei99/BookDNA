@@ -2,6 +2,7 @@
 import Navbar from "../components/Navbar.vue";
 import GenreList from "../components/GenreList.vue";
 import CelebrityPicks from "../components/CelebrityPicks.vue";
+import AboutSection from "../components/AboutSection.vue";
 </script>
 <template>
     <Navbar />
@@ -55,5 +56,6 @@ import CelebrityPicks from "../components/CelebrityPicks.vue";
         <GenreList />
 
         <CelebrityPicks />
+        <AboutSection />
     </main>
 </template>

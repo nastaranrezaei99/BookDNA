@@ -30,7 +30,7 @@
                 class="genre-card"
                 @click="openGenre(genre.name)"
             >
-                <h3>{{ genre.name }}</h3>
+                <h3>{{ getGenreName(genre.name) }}</h3>
 
                 <p>
                     {{ getDescription(genre.name) }}
@@ -54,7 +54,18 @@ const router = useRouter();
 const genres = ref([]);
 const loading = ref(false);
 const error = ref("");
+const genreNames = {
+    Classic: "Klassiker",
+    History: "Geschichte",
+    Poetry: "Lyrik",
+    "Historical Fiction": "Historischer Roman",
+    "Coming-of-Age": "Entwicklungsroman",
+    Nonfiction: "Sachbuch"
+};
 
+function getGenreName(category) {
+    return genreNames[category] || category;
+}
 const genreDescriptions = {
     Classic:
         "Zeitlose Bücher und bedeutende Werke der Literatur.",

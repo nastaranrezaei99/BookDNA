@@ -6,7 +6,7 @@
         </RouterLink>
 
         <nav>
-            <RouterLink to="/#genres">Kategorien</RouterLink>
+            <a href="#genres">Kategorien</a>
 
             <button
                 class="nav-link"
