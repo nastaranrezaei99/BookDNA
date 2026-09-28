@@ -292,6 +292,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 35px;
+    justify-content: center;
 }
 
 .book-card {
@@ -472,19 +473,81 @@ body {
 }
 
 /* QUIZ */
+.error-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    background-color: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-window {
+    width: 320px;
+    padding: 30px;
+
+    background-color: #fffaf4;
+    border-radius: 15px;
+
+    text-align: center;
+    color: #5c4b42;
+}
+
+.error-window img {
+    width: 110px;
+}
+
+.error-window p {
+    color: #5c4b42;
+    font-size: 16px;
+}
+
+.error-window button {
+    padding: 8px 20px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #79645a;
+    color: white;
+
+    cursor: pointer;
+}
+
+.error-window button:hover {
+    background-color: #614c32;
+}
+
+.quiz-progress {
+    display: block;
+    width: 100%;
+    height: 10px;
+    margin: 16px 0 24px;
+    accent-color: #694f44;
+}
 
 .quiz-page {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     padding-top: 80px;
     padding-left: 20px;
     padding-right: 20px;
 }
 
+.book-results {
+    width: min(1100px, 92%);
+    margin-top: 40px;
+    text-align: center;
+}
+
 .quiz-card {
     width: 650px;
-    height: 400px;
+    min-height: 400px;
 
     padding: 20px 40px;
 
@@ -568,6 +631,57 @@ body {
 }
 
 /* RESULT */
+.book-result .book-info {
+    text-align: center;
+}
+
+.book-results .book-card img {
+    width: 180px;
+    height: 270px;
+}
+
+.book-results .quiz-actions button {
+    width: 130px;
+    height: 36px;
+}
+
+.book-results .book-grid {
+    align-items: stretch;
+}
+
+.recommendation-title {
+    margin-top: 40px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.interest-item p {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.result-interests {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+}
+
+.result-interests h3 {
+    grid-column: 1 / 3;
+}
+
+.interest-progress {
+    width: 100%;
+    height: 12px;
+    accent-color: #f3d9b1;
+}
+
+
+
+
+
 
 .quiz-result {
     width: min(1100px, 92%);
