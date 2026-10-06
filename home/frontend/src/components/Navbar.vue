@@ -6,8 +6,8 @@
         </RouterLink>
 
         <nav>
-            <a href="#genres">Kategorien</a>
-
+            <a href="/#genres">Kategorien</a>
+            
             <button
                 class="nav-link"
                 type="button"
@@ -18,15 +18,15 @@
 
             <RouterLink to="/quiz">Quiz</RouterLink>
 
-            <a href="#celebrity">Promi-Empfehlungen</a>
-            <a href="#about">Über uns</a>
+            <a href="/#celebrity">Promi-Empfehlungen</a>
+            <a href="/#about">Über uns</a>
         </nav>
 
         <div class="nav-actions">
             <a href="#">Anmelden</a>
 
-            <RouterLink to="/quiz" class="btn-small">
-                Los gehts
+            <RouterLink to="/dashboard" class="btn-small">
+                Mein Bereich
             </RouterLink>
         </div>
     </header>

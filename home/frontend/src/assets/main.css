@@ -759,4 +759,112 @@ body {
     .book-detail-info h1 {
         font-size: 32px;
     }
+
+
+    /* DASHBOARD */
+
+.dashboard-page {
+    padding: 60px 80px 100px;
+}
+
+.dashboard-header {
+    margin-bottom: 40px;
+}
+
+.dashboard-header .label {
+    margin-bottom: 8px;
+
+    color: #c07854;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.dashboard-header h1 {
+    margin: 0 0 12px;
+
+    color: #88571a;
+    font-size: 42px;
+}
+
+.dashboard-header > p:last-child {
+    color: #5c4b42;
+}
+
+
+/* OVERVIEW */
+
+.dashboard-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+
+    margin-bottom: 45px;
+}
+
+.dashboard-box {
+    padding: 25px;
+
+    background-color: rgba(255, 250, 244, 0.95);
+
+    border: 1px solid #d8c6b8;
+    border-radius: 18px;
+}
+
+.dashboard-box h3 {
+    margin: 0;
+
+    color: #694f44;
+    font-size: 16px;
+}
+
+.dashboard-number {
+    margin: 15px 0 0;
+
+    color: #88571a;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/* DASHBOARD SECTIONS */
+
+.dashboard-section {
+    margin-bottom: 30px;
+    padding: 30px;
+
+    background-color: rgba(255, 250, 244, 0.92);
+
+    border: 1px solid #d8c6b8;
+    border-radius: 20px;
+}
+
+.dashboard-section h2 {
+    margin-top: 0;
+
+    color: #88571a;
+    font-size: 26px;
+}
+
+.dashboard-section p {
+    color: #5c4b42;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .dashboard-page {
+        padding: 40px 20px;
+    }
+
+    .dashboard-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header h1 {
+        font-size: 34px;
+    }
+}
 }

@@ -1,4 +1,5 @@
 const express = require("express");
+
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 
@@ -41,6 +42,23 @@ app.get("/books/id/:id", function (req, res) {
             }
 
             res.json(row);
+        }
+    );
+});
+
+
+app.get("/books", function (req, res) {
+    db.all(
+        "SELECT * FROM books",
+        function (err, rows) {
+            if (err) {
+                res.status(500).json({
+                    error: err.message
+                });
+                return;
+            }
+
+            res.json(rows);
         }
     );
 });
