@@ -1,12 +1,24 @@
 const express = require("express");
-
+const bcrypt = require("bcryptjs");
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
-
-
-const Fuse = require("fuse.js"); // Importiere Fuse.js für Fuzzy-Suche
-
+const Fuse = require("fuse.js");
+const session = require("express-session");
 const app = express();
+
+app.use(express.json());
+
+app.use(session({
+    secret: process.env.SESSION_SECRET || "bookdna-local-development-only",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,
+        sameSite: "lax",
+        secure: false,
+        maxAge: 24 * 60 * 60 * 1000
+    }
+}));
 
 const db = new sqlite3.Database(
     path.join(__dirname, "database.db"),
@@ -18,7 +30,20 @@ const db = new sqlite3.Database(
         }
     }
 );
-
+db.run(`
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT NOT NULL,
+        email TEXT NOT NULL UNIQUE,
+        password_hash TEXT NOT NULL
+    )
+`, function (err) {
+    if (err) {
+        console.error("Fehler beim Erstellen der users-Tabelle:", err.message);
+    } else {
+        console.log("Users-Tabelle ist bereit.");
+    }
+});
 
 app.get("/books/id/:id", function (req, res) {
     const bookId = req.params.id;
@@ -183,6 +208,179 @@ app.get("/celebrity-picks", function (req, res) {
         }
 
         res.json(rows);
+    });
+});
+app.post("/register", async function (req, res) {
+    const { name, email, password } = req.body;
+
+    if (
+        typeof name !== "string" ||
+        typeof email !== "string" ||
+        typeof password !== "string" ||
+        !name.trim() ||
+        !email.trim() ||
+        password.length < 8
+    ) {
+        return res.status(400).json({
+            error: "Bitte alle Felder ausfüllen. Das Passwort muss mindestens 8 Zeichen haben."
+        });
+    }
+
+    const cleanName = name.trim();
+    const cleanEmail = email.trim().toLowerCase();
+
+    try {
+        const passwordHash = await bcrypt.hash(password, 12);
+
+        db.run(
+            "INSERT INTO users (name, email, password_hash) VALUES (?, ?, ?)",
+            [cleanName, cleanEmail, passwordHash],
+            function (err) {
+                if (err) {
+                    if (err.code === "SQLITE_CONSTRAINT") {
+                        return res.status(409).json({
+                            error: "Diese E-Mail-Adresse ist bereits registriert."
+                        });
+                    }
+
+                    return res.status(500).json({
+                        error: "Fehler bei der Registrierung."
+                    });
+                }
+
+                res.status(201).json({
+                    message: "Registrierung erfolgreich.",
+                    user: {
+                        id: this.lastID,
+                        name: cleanName,
+                        email: cleanEmail
+                    }
+                });
+            }
+        );
+    } catch (err) {
+        res.status(500).json({
+            error: "Fehler bei der Registrierung."
+        });
+    }
+});
+
+app.post("/login", function (req, res) {
+    const { email, password } = req.body;
+
+    if (typeof email !== "string" || typeof password !== "string" ||
+        !email.trim() || !password) {
+        return res.status(400).json({
+            error: "Bitte E-Mail und Passwort eingeben."
+        });
+    }
+
+    db.get(
+        "SELECT * FROM users WHERE email = ?",
+        [email.trim().toLowerCase()],
+        async function (err, user) {
+            if (err) {
+                return res.status(500).json({
+                    error: "Datenbankfehler."
+                });
+            }
+
+            if (!user) {
+                return res.status(401).json({
+                    error: "E-Mail oder Passwort ist falsch."
+                });
+            }
+
+            try {
+                const passwordCorrect = await bcrypt.compare(
+                    password,
+                    user.password_hash
+                );
+
+                if (!passwordCorrect) {
+                    return res.status(401).json({
+                        error: "E-Mail oder Passwort ist falsch."
+                    });
+                }
+
+                req.session.regenerate(function (err) {
+                    if (err) {
+                        return res.status(500).json({
+                            error: "Fehler beim Erstellen der Sitzung."
+                        });
+                    }
+
+                    req.session.userId = user.id;
+
+                    req.session.save(function (err) {
+                        if (err) {
+                            return res.status(500).json({
+                                error: "Fehler beim Speichern der Sitzung."
+                            });
+                        }
+
+                        res.json({
+                            message: "Anmeldung erfolgreich.",
+                            user: {
+                                id: user.id,
+                                name: user.name,
+                                email: user.email
+                            }
+                        });
+                    });
+                });
+            } catch (err) {
+                res.status(500).json({
+                    error: "Fehler bei der Anmeldung."
+                });
+            }
+        }
+    );
+});
+
+app.get("/me", function (req, res) {
+    if (!req.session.userId) {
+        return res.status(401).json({
+            error: "Nicht angemeldet."
+        });
+    }
+
+    db.get(
+        "SELECT id, name, email FROM users WHERE id = ?",
+        [req.session.userId],
+        function (err, user) {
+            if (err) {
+                return res.status(500).json({
+                    error: "Datenbankfehler."
+                });
+            }
+
+            if (!user) {
+                return res.status(401).json({
+                    error: "Benutzer nicht gefunden."
+                });
+            }
+
+            res.json({
+                user: user
+            });
+        }
+    );
+});
+
+app.post("/logout", function (req, res) {
+    req.session.destroy(function (err) {
+        if (err) {
+            return res.status(500).json({
+                error: "Fehler beim Abmelden."
+            });
+        }
+
+        res.clearCookie("connect.sid");
+
+        res.json({
+            message: "Erfolgreich abgemeldet."
+        });
     });
 });
 
