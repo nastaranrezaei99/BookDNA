@@ -5,6 +5,8 @@ import CategoryView from "../views/CategoryView.vue";
 import SearchResultsView from "../views/SearchResultsView.vue";
 import QuizView from "../views/QuizView.vue";
 import BookDetailView from "../views/BookDetailView.vue";
+import DashboardView from "../views/DashboardView.vue";
+
 
 const router = createRouter({
     history: createWebHistory(),
@@ -34,6 +36,11 @@ const router = createRouter({
             path: "/book/:id",
             name: "book-detail",
             component: BookDetailView
+        },
+        {
+            path: "/dashboard",
+            name: "dashboard",
+            component: DashboardView
         }
     ]
 });

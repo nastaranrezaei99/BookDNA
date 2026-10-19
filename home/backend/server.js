@@ -1,4 +1,5 @@
 const express = require("express");
+
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 
@@ -6,6 +7,7 @@ const path = require("path");
 const Fuse = require("fuse.js"); // Importiere Fuse.js für Fuzzy-Suche
 
 const app = express();
+app.use(express.json());
 
 const db = new sqlite3.Database(
     path.join(__dirname, "database.db"),
@@ -17,6 +19,7 @@ const db = new sqlite3.Database(
         }
     }
 );
+
 
 
 app.get("/books/id/:id", function (req, res) {
@@ -41,6 +44,23 @@ app.get("/books/id/:id", function (req, res) {
             }
 
             res.json(row);
+        }
+    );
+});
+
+
+app.get("/books", function (req, res) {
+    db.all(
+        "SELECT * FROM books",
+        function (err, rows) {
+            if (err) {
+                res.status(500).json({
+                    error: err.message
+                });
+                return;
+            }
+
+            res.json(rows);
         }
     );
 });
@@ -168,6 +188,64 @@ app.get("/celebrity-picks", function (req, res) {
     });
 });
 
+
+// Bewertungen laden
+app.get("/books/id/:id/reviews", function (req, res) {
+    const bookId = req.params.id;
+
+    const sql = `
+        SELECT id, rating, comment, created_at
+        FROM reviews
+        WHERE book_id = ?
+        ORDER BY id DESC
+    `;
+
+    db.all(sql, [bookId], function (err, reviews) {
+        if (err) {
+            res.status(500).json({
+                error: "Bewertungen konnten nicht geladen werden."
+            });
+            return;
+        }
+
+        res.json(reviews);
+    });
+});
+
+
+// Neue Bewertung erhalten
+app.post("/books/id/:id/reviews", function (req, res) {
+    const bookId = req.params.id;
+    const rating = req.body.rating;
+    const comment = req.body.comment;
+    const userId = 1;
+
+    const sql = `
+    INSERT INTO reviews (book_id, user_id, rating, comment)
+    VALUES (?, ?, ?, ?)
+`;
+
+    db.run(sql, [bookId, userId, rating, comment], function (err) {
+        if (err) {
+            console.error(err.message);
+
+            res.status(500).json({
+                message: "Die Bewertung konnte nicht gespeichert werden."
+            });
+            return;
+        }
+
+        res.status(201).json({
+            message: "Bewertung gespeichert."
+        });
+    });
+});
+
+
+// Server starten
 app.listen(3000, function () {
     console.log("Server läuft auf Port 3000");
 });
+
+
+
