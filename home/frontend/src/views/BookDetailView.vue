@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref, watch,computed } from "vue";
+import { onMounted, ref, watch, computed } from "vue";
 import { useRoute } from "vue-router";
 
 import Navbar from "../components/Navbar.vue";
@@ -10,8 +10,10 @@ const error = ref("");
 const rating = ref(0);
 const reviewText = ref("");
 const reviews = ref([]);
+const currentUser = ref(null);
 const reviewsLoading = ref(false);
 const reviewsError = ref("");
+
 const averageRating = computed(() => {
     if (reviews.value.length === 0) {
         return 0;
@@ -27,6 +29,9 @@ const averageRating = computed(() => {
 
     return average.toFixed(1);
 });
+
+
+
 const book = ref(null);
 const loading = ref(false);
 
@@ -51,6 +56,29 @@ async function loadBook() {
         loading.value = false;
     }
 }
+
+
+//Login checken
+async function checkLogin() {
+    try {
+        const response = await fetch("/api/me", {
+            credentials: "include"
+        });
+
+        if (!response.ok) {
+            currentUser.value = null;
+            return;
+        }
+
+        const data = await response.json();
+        currentUser.value = data.user;
+
+    } catch (err) {
+        console.error(err);
+        currentUser.value = null;
+    }
+}
+
 //Bewertung anzeigen von backend
 async function loadReviews() {
     const bookId = route.params.id;
@@ -69,25 +97,24 @@ async function loadReviews() {
         }
 
         const data = await response.json();
-
         if (bookId === route.params.id) {
             reviews.value = data;
         }
+
+
     } catch (err) {
         if (bookId === route.params.id) {
             reviewsError.value = err.message;
         }
     } finally {
-        if (bookId === route.params.id) {
-            reviewsLoading.value = false;
-        }
+
+        reviewsLoading.value = false;
+
     }
 
 }
 
-
-
-
+//Bewertung in Datenbank speichern
 
 async function saveReview() {
     try {
@@ -111,7 +138,8 @@ async function saveReview() {
 
         const data = await response.json();
         console.log(data.message);
-        //bewertung direkt angezeigt werden
+
+        //bewertung direkt angezeigt werden, braucht man nicht aktualisieren
         await loadReviews();
 
     } catch (err) {
@@ -137,11 +165,11 @@ watch(
 );
 
 
-
+onMounted(checkLogin);
 
 </script>
 <template>
-    <Navbar />
+    <Navbar @auth-changed="checkLogin" />
 
     <main class="book-detail-page">
         <p v-if="loading">
@@ -154,10 +182,7 @@ watch(
 
         <section v-else-if="book" class="book-detail">
             <div class="book-detail-image">
-                <img
-                    :src="`/images/${book.img}`"
-                    :alt="book.name"
-                />
+                <img :src="`/images/${book.img}`" :alt="book.name" />
             </div>
 
             <div class="book-detail-info">
@@ -175,117 +200,121 @@ watch(
                     {{ book.beschreibung }}
                 </p>
 
-                <RouterLink
-                    :to="{
-                        name: 'category',
-                        params: {
-                            category: book.kategorie
-                        }
-                    }"
-                    class="btn-primary"
-                >
-                    Mehr Bücher aus {{ book.kategorie }} 
+                <RouterLink :to="{
+                    name: 'category',
+                    params: {
+                        category: book.kategorie
+                    }
+                }" class="btn-primary">
+                    Mehr Bücher aus {{ book.kategorie }}
                 </RouterLink>
             </div>
 
 
-                <!-- Bewertung UIX-->
+
+            <!-- Bewertung UIX/Stern-->
             <div class="book-rating">
                 <h2>Bewertung</h2>
 
-                
-                    <button
-                        v-for="star in 5"
-                        :key="star"
-                        
-                        type="button"
-                        class="star"
-                        :class="{ filled: star <= rating }"
+                <!--ist angemeldet?-->
+                <div v-if="currentUser" class="review-form">
 
-                        @click="rating = star"
-                    >
+
+                    <button v-for="star in 5" :key="star" type="button" class="star" :class="{ filled: star <= rating }"
+                        @click="rating = star">
                         ★
-                </button>
-                
+                    </button>
+
+                    <!-- Bewertung UIX/CMBox-->
+
+                    <label for="review-text">Deine Meinung zum Buch</label>
+
+                    <textarea id="review-text" v-model="reviewText" rows="4"
+                        placeholder="Wie hat dir das Buch gefallen?">
+                    </textarea>
 
 
-                <!-- Bewertung ergebnis -->
 
-                <p>Deine Bewertung: {{ rating }} Sterne</p>
-                <label for="review-text">Deine Meinung zum Buch</label>
+                    <!-- Bewertung ergebnis/Sterne -->
 
-                <textarea
-                    id="review-text"
-                    v-model="reviewText"
-                    rows="4"
-                    placeholder="Wie hat dir das Buch gefallen?">
-                </textarea>
-
-                
-                 
-                <!-- Bewertung buttons --> 
-<button
-    type="button"
-    class="btn-primary"
-    @click="saveReview"
->
-    Bewertung speichern
-</button>
+                    <p>Deine Bewertung: {{ rating }} Sterne</p>
 
 
 
 
+                    <!-- Bewertung buttons -->
+                    <button type="button" class="btn-primary" @click="saveReview">
+                        Bewertung speichern
+                    </button>
+                </div>
+
+                <p v-else>
+                    Bitte melde dich an, um eine Bewertung abzugeben.
+                </p>
 
 
 
+                <!--Erhaltene Bewertung von backend und anzeigen-->
                 <h3>Bewertungen zu diesem Buch</h3>
 
-<p v-if="reviewsLoading">
-    Bewertungen werden geladen...
-</p>
+                <p v-if="reviewsLoading">
+                    Bewertungen werden geladen...
+                </p>
+
+
+                <p v-else-if="reviewsError" class="error-message">
+                    {{ reviewsError }}
+                </p>
+
+
+                <p v-else-if="reviews.length === 0">
+                    Noch keine Bewertungen.
+                </p>
+
+
+                <div v-else>
+                    <div class="rating-summary">
+                        <span class="rating-number">
+                            {{ averageRating }}
+                        </span>
+
+                        <span class="rating-star">★</span>
+
+                        <span class="rating-count">
+                            {{ reviews.length }} Bewertungen
+                        </span>
+                    </div>
+
+                    <div v-for="review in reviews" :key="review.id" class="review-item">
+
+                        <p class="review-username">
+                            {{ review.userName || "Unbekannter Benutzer" }}
+                        </p>
+
+                        <div class="review-stars">
+                            <span v-for="star in 5" :key="star" :class="{ filled: star <= review.rating }">
+                                ★
+                            </span>
+
+                            <span class="review-score">
+                                {{ review.rating }}/5
+                            </span>
+                        </div>
+
+                        <p v-if="review.comment" class="review-comment">
+                            {{ review.comment }}
+                        </p>
+
+                    </div>
+                </div>
 
 
 
-<!-- Bewertung erhalten von backend--> 
-<p v-else-if="reviewsError" class="error-message">
-    {{ reviewsError }}
-</p>
-
-<p v-else-if="reviews.length === 0">
-    Noch keine Bewertungen.
-</p>
-
-<div v-else>
-    <p>
-        Durchschnitt: {{ averageRating }} von 5 Sternen
-    </p>
-
-    <p>
-        Anzahl der Bewertungen: {{ reviews.length }}
-    </p>
-
-    <div
-        v-for="review in reviews"
-        :key="review.id"
-            class="review-item"
-
-    >
-        <p>{{ review.rating }} von 5 Sternen</p>
-
-        <p v-if="review.comment">
-            {{ review.comment }}
-        </p>
-    </div>
-</div>
-
-                
 
 
 
-            
 
             </div>
         </section>
     </main>
 </template>
-

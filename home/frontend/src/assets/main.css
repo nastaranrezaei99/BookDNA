@@ -481,14 +481,17 @@ body {
     padding: 4px;
     color: #767676;
     cursor: pointer;
+    transition: color 0.2s;
 }
 
 .book-rating .star.filled {
     color: #946b2d;
 }
+.book-rating .star:hover {
+    color: #b88d49;
+}
 
 
-/* Bewertungen */
 .book-rating {
     grid-column: 1 / -1;
     border-top: 1px solid #d8c6b8;
@@ -513,11 +516,19 @@ body {
     color: #5c4b42;
     font: inherit;
     resize: vertical;
+    .book-rating textarea:focus {
+    border-color: #946b2d;
+    outline: 2px solid #d8c6b8;
+}
 }
 
 .book-rating .btn-primary {
     border: none;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+.book-rating .btn-primary:hover {
+    background-color: #523b32;
 }
 
 .book-rating h3 {
@@ -525,15 +536,85 @@ body {
 }
 
 .review-item {
-    border-top: 1px solid #d8c6b8;
-    padding: 16px 0;
+    background-color: #fffaf4;
+    border: 1px solid #d8c6b8;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 12px;
     overflow-wrap: anywhere;
+}
+
+.review-username {
+    font-size: 16px;
+    font-weight: bold;
+    color: #694f44;
+    margin: 0 0 6px;
+}
+
+.review-stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.review-stars span {
+    color: #c9c0b8;
+    font-size: 20px;
+}
+
+.review-stars span.filled {
+    color: #b48748;
+}
+
+.review-stars .review-score {
+    font-size: 12px;
+    color: #8d7667;
+    margin-left: 8px;
+}
+
+.review-comment {
+    margin: 10px 0 0;
+    color: #604b3f;
+    line-height: 1.5;
 }
 
 .review-item p {
     margin: 6px 0;
     line-height: 1.6;
 }
+
+.review-form {
+    background-color: #fffaf4;
+    border: 1px solid #d8c6b8;
+    border-radius: 12px;
+    padding: 24px;
+    max-width: 600px;
+    margin-top: 20px;
+}
+.rating-summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.rating-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #694f44;
+}
+
+.rating-star {
+    font-size: 26px;
+    color: #b48748;
+}
+
+.rating-count {
+    font-size: 14px;
+    color: #8d7667;
+}
+
+
 
 
 /* QUIZ */

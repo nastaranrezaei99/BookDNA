@@ -387,16 +387,27 @@ app.post("/logout", function (req, res) {
 });
 
 
+
+
+
+
 // Bewertungen laden
 app.get("/books/id/:id/reviews", function (req, res) {
     const bookId = req.params.id;
 
     const sql = `
-        SELECT id, rating, comment, created_at
-        FROM reviews
-        WHERE book_id = ?
-        ORDER BY id DESC
-    `;
+    SELECT
+        reviews.id,
+        reviews.rating,
+        reviews.comment,
+        reviews.created_at,
+        users.name AS userName
+    FROM reviews
+    LEFT JOIN users
+        ON reviews.user_id = users.id
+    WHERE reviews.book_id = ?
+    ORDER BY reviews.id DESC
+`;
 
     db.all(sql, [bookId], function (err, reviews) {
         if (err) {
@@ -416,8 +427,20 @@ app.post("/books/id/:id/reviews", function (req, res) {
     const bookId = req.params.id;
     const rating = req.body.rating;
     const comment = req.body.comment;
-    const userId = 1;
+    const userId = req.session.userId;
 
+
+
+    if (!userId) {
+        return res.status(401).json({
+            error: "Bitte melde dich an, um eine Bewertung abzugeben."
+        });
+    }
+
+
+
+
+    //Wegen SQL injection 
     const sql = `
     INSERT INTO reviews (book_id, user_id, rating, comment)
     VALUES (?, ?, ?, ?)
@@ -427,10 +450,10 @@ app.post("/books/id/:id/reviews", function (req, res) {
         if (err) {
             console.error(err.message);
 
-            res.status(500).json({
+            return res.status(500).json({
                 message: "Die Bewertung konnte nicht gespeichert werden."
             });
-            return;
+            
         }
 
         res.status(201).json({

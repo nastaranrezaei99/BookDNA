@@ -1,70 +1,50 @@
 <template>
-    <header class="navbar">
-        <RouterLink to="/" class="logo">
-            <span class="dna-circle"></span>
-            BookDNA
-        </RouterLink>
+  <header class="navbar">
+    <RouterLink to="/" class="logo">
+      <span class="dna-circle"></span>
+      BookDNA
+    </RouterLink>
 
-        <nav>
-            <a href="/#genres">Kategorien</a>
-            
-            <button
-                class="nav-link"
-                type="button"
-                @click="showSearch = true"
-            >
-                Suche
-            </button>
+    <nav>
+      <a href="/#genres">Kategorien</a>
 
-            <RouterLink to="/quiz">Quiz</RouterLink>
+      <button class="nav-link" type="button" @click="showSearch = true">
+        Suche
+      </button>
 
-            <a href="/#celebrity">Promi-Empfehlungen</a>
-            <a href="/#about">Über uns</a>
-        </nav>
+      <RouterLink to="/quiz">Quiz</RouterLink>
 
-        <div class="nav-actions">
-            <button v-if="user" class="nav-link" type="button" @click="logout"> Abmelden </button>
+      <a href="/#celebrity">Promi-Empfehlungen</a>
+      <a href="/#about">Über uns</a>
+    </nav>
 
-            <button v-else class="nav-link" type="button" @click="showAuth = true"> Anmelden </button>
+    <div class="nav-actions">
+      <button v-if="user" class="nav-link" type="button" @click="logout"> Abmelden </button>
 
-            <RouterLink to="/dashboard" class="btn-small"> Mein Bereich </RouterLink> 
+      <button v-else class="nav-link" type="button" @click="showAuth = true"> Anmelden </button>
+
+      <RouterLink to="/dashboard" class="btn-small"> Mein Bereich </RouterLink>
+    </div>
+  </header>
+
+  <SearchPopup v-if="showSearch" @close="showSearch = false" />
+  <AuthPopup v-if="showAuth" @close="showAuth = false" @logged-in="handleLogin" />
+  <Transition name="logout-fade">
+    <div v-if="showLogoutSuccess" class="logout-overlay">
+      <div class="logout-box">
+        <div class="logout-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16 17 21 12 16 7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
         </div>
-    </header>
 
-    <SearchPopup
-        v-if="showSearch"
-        @close="showSearch = false"
-    />
-    <AuthPopup
-        v-if="showAuth"
-        @close="showAuth = false"
-        @logged-in="handleLogin"
-    />
-    <Transition name="logout-fade">
-      <div v-if="showLogoutSuccess" class="logout-overlay">
-        <div class="logout-box">
-         <div class="logout-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="65"
-              height="65"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
-              <polyline points="16 17 21 12 16 7"/>
-              <line x1="21" y1="12" x2="9" y2="12"/>
-            </svg>
-          </div>
-
-          <h3>Erfolgreich abgemeldet!</h3>
-          <p>Bis bald bei BookDNA!</p>
-        </div>
+        <h3>Erfolgreich abgemeldet!</h3>
+        <p>Bis bald bei BookDNA!</p>
       </div>
+    </div>
   </Transition>
 </template>
 
@@ -74,6 +54,8 @@ import { RouterLink } from "vue-router";
 import SearchPopup from "./SearchPopup.vue";
 import AuthPopup from "./AuthPopup.vue";
 
+
+const emit = defineEmits(["auth-changed"]);
 const showSearch = ref(false);
 const showAuth = ref(false);
 const user = ref(null);
@@ -96,6 +78,7 @@ onMounted(async function () {
 
 function handleLogin(loggedInUser) {
   user.value = loggedInUser;
+  emit("auth-changed");
 }
 
 async function logout() {
@@ -110,7 +93,9 @@ async function logout() {
     }
 
     user.value = null;
+    emit("auth-changed");
     showLogoutSuccess.value = true;
+
 
     setTimeout(() => {
       showLogoutSuccess.value = false;
